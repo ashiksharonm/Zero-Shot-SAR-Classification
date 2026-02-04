@@ -1,0 +1,16 @@
+
+numpy
+matplotlib
+scikit-learn
+pandas
+pillow
+tqdm
+ftfy
+regex
+torch
+torchvision
+git+https://github.com/openai/CLIP.git
+seaborn
+scipy
+datasets
+transformers

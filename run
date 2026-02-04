@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+# Code Ocean Run Script
+echo "Starting Zero-Shot SAR Classification Experiment..."
+
+# Execute the main python script
+python code/main.py
+
+echo "Experiment Complete. Results saved to ../results"
