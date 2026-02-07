@@ -1,4 +1,5 @@
 # Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)
+[![Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://codeocean.com/capsule/8135327/tree)
 
 **Ashik Sharon M.**  
 *Manuscript submitted to IEEE Geoscience and Remote Sensing Letters (GRSL)*
@@ -34,7 +35,7 @@ The t-SNE projection of CLIP embeddings reveals distinct clustering for semantic
 ### 3. Confusion Matrix
 Hierarchical grouping significantly reduces misclassification between semantically similar classes (e.g., *Annual Crop* vs. *Permanent Crop*).
 
-![Confusion Matrix](figures/fig2_conf_matrix.png)
+![Confusion Matrix](figures/fig2_confusion_matrix.png)
 
 ---
 
@@ -64,15 +65,4 @@ If you use this code or results, please cite our IEEE GRSL paper:
 
 > **Ashik Sharon M.**, *"Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models"*, IEEE Geoscience and Remote Sensing Letters, 2026. (Under Review)
 
-[**📄 View Full Paper (PDF)**]([Zero_Shot_SAR_Classification.pdf](https://drive.google.com/file/d/1plfSqjQZku4OMYDqDCjTYExJ9pEtIOgH/view))
-   - If using the "RGB" version converted to Grayscale, ensure the path in the notebook matches `../data/EuroSAT`.
-
-2. **Environment:**
-   - The environment is defined in `requirements.txt`.
-   - It requires a GPU-enabled instance for efficient CLIP inference.
-3. **Running:**
-   - Open `code/sar_zero_shot_clip_v3.ipynb` in JupyterLab.
-   - Run all cells to reproduce the Zero-Shot classification results.
-
-## Files
-- `code/sar_zero_shot_clip_v3.ipynb`: Main experiment notebook.
+[**📄 Download Full Paper (PDF)**](Zero_Shot_SAR_Classification.pdf)
