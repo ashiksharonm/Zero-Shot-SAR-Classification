@@ -35,6 +35,8 @@ The t-SNE projection of CLIP embeddings reveals distinct clustering for semantic
 Hierarchical grouping significantly reduces misclassification between semantically similar classes (e.g., *Annual Crop* vs. *Permanent Crop*).
 
 ![Confusion Matrix](figures/fig2_confusion_matrix.png)
+*(Figure 2: Confusion Matrices for CLIP ViT-B/32 (left) and ViT-L/14 (right). Industrial and Water classes show high accuracy, acting as reliable anchors.
+Vegetation classes (Forest, Brushland) act as “confusers,” frequently indistinguishable from one another in the zero-shot embedding space)*
 
 ---
 
@@ -64,4 +66,4 @@ If you use this code or results, please cite our IEEE GRSL paper:
 
 > **Ashik Sharon M.**, *"Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models"*, IEEE Geoscience and Remote Sensing Letters, 2026. (Under Review)
 
-[**📄 Download Full Paper (PDF)**](Zero_Shot_SAR_Classification.pdf)
+[**📄 Download Full Paper (PDF)**]([Zero_Shot_SAR_Classification.pdf](https://drive.google.com/file/d/1plfSqjQZku4OMYDqDCjTYExJ9pEtIOgH/view))
