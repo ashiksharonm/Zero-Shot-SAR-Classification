@@ -1,5 +1,4 @@
 # Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)
-[![Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://codeocean.com/capsule/8135327/tree)
 
 **Ashik Sharon M.**  
 *Manuscript submitted to IEEE Geoscience and Remote Sensing Letters (GRSL)*
@@ -29,7 +28,7 @@ Using the best-performing model (**CLIP ViT-L/14**), we achieved:
 ### 2. t-SNE Visualization
 The t-SNE projection of CLIP embeddings reveals distinct clustering for semantic categories (e.g., *Forest* vs. *River*), even in the zero-shot SAR domain.
 
-![t-SNE Embeddings](figures/fig1_tsne.png)
+![t-SNE Embeddings](figures/fig3_tsne.png)
 *(Figure 1: t-SNE visualization of CLIP embeddings for SAR-like EuroSAT images)*
 
 ### 3. Confusion Matrix
