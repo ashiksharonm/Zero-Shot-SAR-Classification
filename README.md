@@ -1,5 +1,4 @@
 # Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)
-[![Code Ocean](https://codeocean.com/codeocean-assets/badge/open-in-code-ocean.svg)](https://codeocean.com/capsule/8135327/tree)
 
 **Ashik Sharon M.**  
 *Manuscript submitted to IEEE Geoscience and Remote Sensing Letters (GRSL)*
@@ -65,7 +64,7 @@ If you use this code or results, please cite our IEEE GRSL paper:
 
 > **Ashik Sharon M.**, *"Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models"*, IEEE Geoscience and Remote Sensing Letters, 2026. (Under Review)
 
-[**📄 Download Full Paper (PDF)**](Zero_Shot_SAR_Classification.pdf)
+[**📄 View Full Paper (PDF)**]([Zero_Shot_SAR_Classification.pdf](https://drive.google.com/file/d/1plfSqjQZku4OMYDqDCjTYExJ9pEtIOgH/view))
    - If using the "RGB" version converted to Grayscale, ensure the path in the notebook matches `../data/EuroSAT`.
 
 2. **Environment:**
