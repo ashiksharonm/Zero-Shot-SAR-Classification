@@ -6,10 +6,10 @@ pandas
 pillow
 tqdm
 ftfy
-regex
+# torch and torchvision (Standard installation for GitHub users)
 torch
 torchvision
-git+https://github.com/openai/CLIP.git
+
 seaborn
 scipy
 datasets

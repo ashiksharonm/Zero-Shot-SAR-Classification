@@ -21,6 +21,13 @@ warnings.filterwarnings('ignore')
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Device: {device}')
 
+# --- CODE OCEAN CONFIGURATION ---
+# Set to 'True' to use a subset of data (saves compute/time for Code Ocean verification)
+# We reduce the dataset size here to stay within Code Ocean's default compute quota limits.
+# Set to 'False' to reproduce the full paper results (takes significantly longer).
+DEMO_MODE = False
+DEMO_SAMPLE_COUNT = 2500  # ~10% of dataset to ensure quick runnable verification
+
 # --- CODE OCEAN PATHS ---
 # Code Ocean mounts the dataset in ../data
 DATA_DIR = "../data/EuroSAT"
@@ -43,6 +50,12 @@ eurosat_test = load_dataset('tanganke/eurosat', split='test')
 
 # Combine for larger evaluation
 eurosat_full = concatenate_datasets([eurosat_train, eurosat_test])
+
+if DEMO_MODE:
+    print(f'\n⚠️ DEMO MODE ACTIVE: Using random subset of {DEMO_SAMPLE_COUNT} images.')
+    print('   Reason: Reducing dataset size to stay within Code Ocean compute quota limits.')
+    print('   To reproduce FULL paper results, set DEMO_MODE = False in code/main.py\n')
+    eurosat_full = eurosat_full.shuffle(seed=42).select(range(DEMO_SAMPLE_COUNT))
 print(f'Full dataset: {len(eurosat_full)} images')
 
 CLASS_NAMES = eurosat_full.features['label'].names
