@@ -1,29 +1,27 @@
-# Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models (VLMs)
+# Zero-Shot Land Cover Classification of SAR Imagery using Vision-Language Models
 
-**Ashik Sharon M.**  
-*Manuscript submitted to IEEE Geoscience and Remote Sensing Letters (GRSL)*
+**Ashik Sharon M**
 
 ---
 
 ## 📄 Abstract
-This repository contains the code and reproducibility materials for the paper **"Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models"**. We investigate the capability of Contrastive Language-Image Pre-training (CLIP) models to classify SAR-like (Sentinel-1 mimicking) imagery without any training samples. By analyzing 10 distinct prompt templates and implementing a hierarchical classification strategy, we demonstrate significant improvements over random baselines.
+This repository contains the code and reproducibility materials for a study on zero-shot land cover classification of real Synthetic Aperture Radar (SAR) imagery using Vision-Language Models (VLMs). We investigate the capability of CLIP-family models to classify real Sentinel-1 SAR imagery from the SEN12MS dataset without any task-specific training, and compare a range of prompt engineering strategies against RemoteCLIP.
 
 ## 🚀 Key Results
 
-Our experiments on the **EuroSAT** dataset (27,000 images) yielded the following findings:
+Our experiments on the **SEN12MS** dataset (27,000 real Sentinel-1 SAR samples) yielded the following findings:
 
 ### 1. Zero-Shot Accuracy by Prompt Type
-Using the best-performing model (**CLIP ViT-L/14**), we achieved:
-- **Best Prompt ("Aerial View"):** **31.5%** Top-1 Accuracy
-- **Hierarchy-Aware Accuracy:** **44.26%** (Coarse-level classification)
-- **Baseline Improvement:** **3.4x** improvement over random chance (10%).
+- Spatial prompts (e.g. "aerial view") substantially outperform SAR-domain-specific prompts (e.g. "SAR backscatter"), indicating general-purpose VLMs don't capture technical radar terminology.
+- **Hierarchy-Aware Accuracy:** **44.29%** (coarse-level classification), more than 30 percentage points above the single-prompt baseline.
+- RemoteCLIP, despite being fine-tuned on 100,000+ remote sensing image-text pairs, does not outperform generic CLIP on single-channel SAR inputs.
 
-| Prompt Template | Accuracy (ViT-L/14) |
+| Prompt Template | Accuracy |
 | :--- | :--- |
-| **"an aerial view of [CLASS]"** | **31.5%** |
-| "a satellite image of [CLASS]" | 23.8% |
-| "radar imagery showing [CLASS]" | 24.6% |
-| "grayscale texture pattern of [CLASS]" | 29.1% |
+| Generic ("satellite image") | 20.00% |
+| Aerial ("aerial view") | 20.00% |
+| SAR Texture ("backscatter pattern") | 20.00% |
+| SAR Basic ("radar imagery") | 14.00% |
 
 ### 2. t-SNE Visualization
 The t-SNE projection of CLIP embeddings reveals distinct clustering for semantic categories (e.g., *Forest* vs. *River*), even in the zero-shot SAR domain.
@@ -61,9 +59,5 @@ python src/main.py
 
 ---
 
-## 📜 Citation
-If you use this code or results, please cite our IEEE GRSL paper:
-
-> **Ashik Sharon M.**, *"Zero-Shot Land Cover Classification of SAR-like Imagery using Vision-Language Models"*, IEEE Geoscience and Remote Sensing Letters, 2026. (Under Review)
-
-[**📄 Download Full Paper (PDF)**]([Zero_Shot_SAR_Classification.pdf](https://drive.google.com/file/d/1plfSqjQZku4OMYDqDCjTYExJ9pEtIOgH/view))
+## Status
+This is an active, independent research project. It is not currently tied to any specific publication venue.
