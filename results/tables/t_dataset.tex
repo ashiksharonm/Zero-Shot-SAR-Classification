@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{EuroSAT-SAR classes, the two coarse hierarchies (H3: 3 groups; H5: 5 groups) and the stratified dev/test split (seed 0). Dev is used only to select prompt templates/configurations; all reported results are computed on test.}
+\label{tab:dataset}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lllrrr@{}}
+\toprule
+Fine class & H3 group & H5 group & Total & Dev & Test \\
+\midrule
+AnnualCrop & vegetation & agriculture & 3,000 & 600 & 2,400 \\
+Forest & vegetation & natural vegetation & 3,000 & 600 & 2,400 \\
+HerbaceousVegetation & vegetation & natural vegetation & 3,000 & 600 & 2,400 \\
+Highway & built-up & transport & 2,500 & 500 & 2,000 \\
+Industrial & built-up & built-up & 2,500 & 500 & 2,000 \\
+Pasture & vegetation & natural vegetation & 2,000 & 400 & 1,600 \\
+PermanentCrop & vegetation & agriculture & 2,500 & 500 & 2,000 \\
+Residential & built-up & built-up & 3,000 & 600 & 2,400 \\
+River & water & water & 2,500 & 500 & 2,000 \\
+SeaLake & water & water & 3,000 & 600 & 2,400 \\
+\midrule
+Total (10 classes) & & & 27,000 & 5,400 & 21,600 \\
+\bottomrule
+\end{tabular*}
+\end{table}

@@ -1,0 +1,3070 @@
+{
+ "models": {
+  "clip_b32": "CLIP ViT-B/32",
+  "clip_l14": "CLIP ViT-L/14",
+  "remoteclip_b32": "RemoteCLIP ViT-B/32",
+  "remoteclip_l14": "RemoteCLIP ViT-L/14",
+  "georsclip_b32": "GeoRSCLIP ViT-B/32"
+ },
+ "dataset": {
+  "classes": [
+   "AnnualCrop",
+   "Forest",
+   "HerbaceousVegetation",
+   "Highway",
+   "Industrial",
+   "Pasture",
+   "PermanentCrop",
+   "Residential",
+   "River",
+   "SeaLake"
+  ],
+  "counts_total": [
+   3000,
+   3000,
+   3000,
+   2500,
+   2500,
+   2000,
+   2500,
+   3000,
+   2500,
+   3000
+  ],
+  "counts_dev": [
+   600,
+   600,
+   600,
+   500,
+   500,
+   400,
+   500,
+   600,
+   500,
+   600
+  ],
+  "counts_test": [
+   2400,
+   2400,
+   2400,
+   2000,
+   2000,
+   1600,
+   2000,
+   2400,
+   2000,
+   2400
+  ],
+  "hierarchies": {
+   "H3": {
+    "names": [
+     "vegetation",
+     "built-up",
+     "water"
+    ],
+    "members": [
+     [
+      "AnnualCrop",
+      "Forest",
+      "HerbaceousVegetation",
+      "Pasture",
+      "PermanentCrop"
+     ],
+     [
+      "Highway",
+      "Industrial",
+      "Residential"
+     ],
+     [
+      "River",
+      "SeaLake"
+     ]
+    ],
+    "counts_test": [
+     10800,
+     6400,
+     4400
+    ]
+   },
+   "H5": {
+    "names": [
+     "agriculture",
+     "natural vegetation",
+     "built-up",
+     "transport",
+     "water"
+    ],
+    "members": [
+     [
+      "AnnualCrop",
+      "PermanentCrop"
+     ],
+     [
+      "Forest",
+      "HerbaceousVegetation",
+      "Pasture"
+     ],
+     [
+      "Industrial",
+      "Residential"
+     ],
+     [
+      "Highway"
+     ],
+     [
+      "River",
+      "SeaLake"
+     ]
+    ],
+    "counts_test": [
+     4400,
+     6400,
+     4400,
+     2000,
+     4400
+    ]
+   }
+  }
+ },
+ "baselines": {
+  "fine": {
+   "majority": {
+    "accuracy": 0.1111111111111111,
+    "balanced_accuracy": 0.1,
+    "macro_precision": 0.01111111111111111,
+    "macro_recall": 0.1,
+    "macro_f1": 0.02,
+    "weighted_f1": 0.022222222222222223,
+    "n_predicted_classes": 1,
+    "n": 21600,
+    "majority_class": 0
+   },
+   "uniform_random_expected_accuracy": 0.1,
+   "prior_random_expected_accuracy": 0.10150891632373112
+  },
+  "H3": {
+   "majority": {
+    "accuracy": 0.5,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_precision": 0.16666666666666666,
+    "macro_recall": 0.3333333333333333,
+    "macro_f1": 0.2222222222222222,
+    "weighted_f1": 0.3333333333333333,
+    "n_predicted_classes": 1,
+    "n": 21600,
+    "majority_class": 0
+   },
+   "uniform_random_expected_accuracy": 0.3333333333333333,
+   "prior_random_expected_accuracy": 0.37928669410150895
+  },
+  "H5": {
+   "majority": {
+    "accuracy": 0.2962962962962963,
+    "balanced_accuracy": 0.2,
+    "macro_precision": 0.059259259259259255,
+    "macro_recall": 0.2,
+    "macro_f1": 0.09142857142857143,
+    "weighted_f1": 0.13544973544973546,
+    "n_predicted_classes": 1,
+    "n": 21600,
+    "majority_class": 1
+   },
+   "uniform_random_expected_accuracy": 0.2,
+   "prior_random_expected_accuracy": 0.22085048010973934
+  }
+ },
+ "prompts": [
+  {
+   "model": "clip_b32",
+   "template": "generic",
+   "category": "General",
+   "prompt": "a satellite image of {}.",
+   "accuracy": 0.0900925925925926,
+   "balanced_accuracy": 0.08900416666666665,
+   "macro_precision": 0.10009273443424241,
+   "macro_recall": 0.08900416666666665,
+   "macro_f1": 0.059181284484401665,
+   "weighted_f1": 0.05981933174999307,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.08624884259259259,
+    0.09388888888888888
+   ],
+   "macro_f1_ci": [
+    0.0569157050856686,
+    0.06168354429556979
+   ],
+   "dev_macro_f1": 0.05958261157548659
+  },
+  {
+   "model": "clip_b32",
+   "template": "photo",
+   "category": "General",
+   "prompt": "a photo of {}.",
+   "accuracy": 0.09898148148148148,
+   "balanced_accuracy": 0.09168333333333333,
+   "macro_precision": 0.0824259336567502,
+   "macro_recall": 0.09168333333333333,
+   "macro_f1": 0.05476458340043511,
+   "weighted_f1": 0.058077742039336876,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.0949537037037037,
+    0.10291666666666667
+   ],
+   "macro_f1_ci": [
+    0.05229740882932774,
+    0.05711545332399486
+   ],
+   "dev_macro_f1": 0.055211877277640854
+  },
+  {
+   "model": "clip_b32",
+   "template": "aerial",
+   "category": "Spatial",
+   "prompt": "an aerial view of {}.",
+   "accuracy": 0.11569444444444445,
+   "balanced_accuracy": 0.10438333333333334,
+   "macro_precision": 0.14861797365197887,
+   "macro_recall": 0.10438333333333334,
+   "macro_f1": 0.04398767930266442,
+   "weighted_f1": 0.04841548079268119,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11148148148148149,
+    0.11958333333333333
+   ],
+   "macro_f1_ci": [
+    0.042103741994084114,
+    0.04568719046891299
+   ],
+   "dev_macro_f1": 0.04232843306082994
+  },
+  {
+   "model": "clip_b32",
+   "template": "sar_basic",
+   "category": "SAR-specific",
+   "prompt": "radar imagery showing {}.",
+   "accuracy": 0.11421296296296296,
+   "balanced_accuracy": 0.10285833333333334,
+   "macro_precision": 0.08934967888582615,
+   "macro_recall": 0.10285833333333334,
+   "macro_f1": 0.0308353720727224,
+   "weighted_f1": 0.03412108997407164,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10986111111111112,
+    0.11856597222222222
+   ],
+   "macro_f1_ci": [
+    0.02950347657150055,
+    0.032100949333840195
+   ],
+   "dev_macro_f1": 0.030327724356295716
+  },
+  {
+   "model": "clip_b32",
+   "template": "sar_backscatter",
+   "category": "SAR-specific",
+   "prompt": "SAR backscatter pattern of {}.",
+   "accuracy": 0.09791666666666667,
+   "balanced_accuracy": 0.088975,
+   "macro_precision": 0.1833332800300535,
+   "macro_recall": 0.088975,
+   "macro_f1": 0.06333488771865146,
+   "weighted_f1": 0.06918790390975321,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.09416666666666666,
+    0.10194675925925926
+   ],
+   "macro_f1_ci": [
+    0.060697877566588884,
+    0.06610187488977425
+   ],
+   "dev_macro_f1": 0.06128726940749555
+  },
+  {
+   "model": "clip_b32",
+   "template": "sar_texture",
+   "category": "SAR-specific",
+   "prompt": "grayscale radar texture of {}.",
+   "accuracy": 0.11425925925925925,
+   "balanced_accuracy": 0.102975,
+   "macro_precision": 0.13724080922567322,
+   "macro_recall": 0.102975,
+   "macro_f1": 0.027402638849957594,
+   "weighted_f1": 0.03014814084396226,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "accuracy_ci": [
+    0.1100462962962963,
+    0.11856597222222222
+   ],
+   "macro_f1_ci": [
+    0.026076500777462184,
+    0.028887162097377052
+   ],
+   "dev_macro_f1": 0.028009566077457453
+  },
+  {
+   "model": "clip_b32",
+   "template": "sentinel",
+   "category": "Remote sensing",
+   "prompt": "a Sentinel-1 satellite image of {}.",
+   "accuracy": 0.10513888888888889,
+   "balanced_accuracy": 0.09648749999999999,
+   "macro_precision": 0.10441195944904633,
+   "macro_recall": 0.09648749999999999,
+   "macro_f1": 0.05319765281763657,
+   "weighted_f1": 0.05597066822357182,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10101736111111112,
+    0.10902893518518518
+   ],
+   "macro_f1_ci": [
+    0.050603128808876824,
+    0.055684270838238695
+   ],
+   "dev_macro_f1": 0.05394037989965854
+  },
+  {
+   "model": "clip_b32",
+   "template": "landcover",
+   "category": "Remote sensing",
+   "prompt": "land cover classification of {}.",
+   "accuracy": 0.09004629629629629,
+   "balanced_accuracy": 0.083325,
+   "macro_precision": 0.17074214795432102,
+   "macro_recall": 0.083325,
+   "macro_f1": 0.056268249994860756,
+   "weighted_f1": 0.060730801818768894,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.08629398148148149,
+    0.09412152777777777
+   ],
+   "macro_f1_ci": [
+    0.053414633331146995,
+    0.05926567378654905
+   ],
+   "dev_macro_f1": 0.054188229507863936
+  },
+  {
+   "model": "clip_b32",
+   "template": "structure",
+   "category": "Structural",
+   "prompt": "spatial pattern of {} from above.",
+   "accuracy": 0.1200925925925926,
+   "balanced_accuracy": 0.10827499999999998,
+   "macro_precision": 0.057993515660749596,
+   "macro_recall": 0.10827499999999998,
+   "macro_f1": 0.03782588883064022,
+   "weighted_f1": 0.0416835737819724,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11573726851851852,
+    0.12439814814814815
+   ],
+   "macro_f1_ci": [
+    0.03587384218819188,
+    0.03923382862683278
+   ],
+   "dev_macro_f1": 0.03758302635257849
+  },
+  {
+   "model": "clip_b32",
+   "template": "texture_gray",
+   "category": "Structural",
+   "prompt": "grayscale texture pattern of {}.",
+   "accuracy": 0.11217592592592593,
+   "balanced_accuracy": 0.10108333333333333,
+   "macro_precision": 0.024990836670115636,
+   "macro_recall": 0.10108333333333333,
+   "macro_f1": 0.022953953187986785,
+   "weighted_f1": 0.025261579688283686,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10810069444444445,
+    0.1163425925925926
+   ],
+   "macro_f1_ci": [
+    0.021964553164049987,
+    0.024191782067467867
+   ],
+   "dev_macro_f1": 0.025759816875408577
+  },
+  {
+   "model": "clip_b32",
+   "template": "ensemble",
+   "category": "Ensemble",
+   "prompt": "mean of all 10 templates",
+   "accuracy": 0.10712962962962963,
+   "balanced_accuracy": 0.09688333333333334,
+   "macro_precision": 0.09538683713424297,
+   "macro_recall": 0.09688333333333334,
+   "macro_f1": 0.0427194127838877,
+   "weighted_f1": 0.0465528239921194,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10328587962962964,
+    0.11102083333333333
+   ],
+   "macro_f1_ci": [
+    0.040913225908574866,
+    0.04469049607386326
+   ],
+   "dev_macro_f1": 0.04066953188140262
+  },
+  {
+   "model": "clip_l14",
+   "template": "generic",
+   "category": "General",
+   "prompt": "a satellite image of {}.",
+   "accuracy": 0.1272222222222222,
+   "balanced_accuracy": 0.13117916666666665,
+   "macro_precision": 0.18045060376482197,
+   "macro_recall": 0.13117916666666665,
+   "macro_f1": 0.10300394659847092,
+   "weighted_f1": 0.10008129791181253,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "dev_macro_f1": 0.10471621466446641
+  },
+  {
+   "model": "clip_l14",
+   "template": "photo",
+   "category": "General",
+   "prompt": "a photo of {}.",
+   "accuracy": 0.12800925925925927,
+   "balanced_accuracy": 0.12344166666666667,
+   "macro_precision": 0.07973103448962157,
+   "macro_recall": 0.12344166666666667,
+   "macro_f1": 0.06940796283160935,
+   "weighted_f1": 0.06988947251049753,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.07498744432958422
+  },
+  {
+   "model": "clip_l14",
+   "template": "aerial",
+   "category": "Spatial",
+   "prompt": "an aerial view of {}.",
+   "accuracy": 0.11625,
+   "balanced_accuracy": 0.10920833333333331,
+   "macro_precision": 0.06897360731624727,
+   "macro_recall": 0.10920833333333331,
+   "macro_f1": 0.06451498825816676,
+   "weighted_f1": 0.06673601904727754,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.06644934505727959
+  },
+  {
+   "model": "clip_l14",
+   "template": "sar_basic",
+   "category": "SAR-specific",
+   "prompt": "radar imagery showing {}.",
+   "accuracy": 0.11453703703703703,
+   "balanced_accuracy": 0.10505416666666664,
+   "macro_precision": 0.09966337065157618,
+   "macro_recall": 0.10505416666666664,
+   "macro_f1": 0.035639313368158745,
+   "weighted_f1": 0.036467077253884345,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.03797983797060136
+  },
+  {
+   "model": "clip_l14",
+   "template": "sar_backscatter",
+   "category": "SAR-specific",
+   "prompt": "SAR backscatter pattern of {}.",
+   "accuracy": 0.1226388888888889,
+   "balanced_accuracy": 0.12561666666666665,
+   "macro_precision": 0.22274781465858678,
+   "macro_recall": 0.12561666666666665,
+   "macro_f1": 0.06514660290829002,
+   "weighted_f1": 0.06791933629254547,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.06934983189134929
+  },
+  {
+   "model": "clip_l14",
+   "template": "sar_texture",
+   "category": "SAR-specific",
+   "prompt": "grayscale radar texture of {}.",
+   "accuracy": 0.11592592592592593,
+   "balanced_accuracy": 0.11910000000000001,
+   "macro_precision": 0.14160978564073917,
+   "macro_recall": 0.11910000000000001,
+   "macro_f1": 0.06311876530015571,
+   "weighted_f1": 0.06494418185981206,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "dev_macro_f1": 0.06166989309639866
+  },
+  {
+   "model": "clip_l14",
+   "template": "sentinel",
+   "category": "Remote sensing",
+   "prompt": "a Sentinel-1 satellite image of {}.",
+   "accuracy": 0.12856481481481483,
+   "balanced_accuracy": 0.128,
+   "macro_precision": 0.15301459837535175,
+   "macro_recall": 0.128,
+   "macro_f1": 0.053659447535990466,
+   "weighted_f1": 0.05576583456937142,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "dev_macro_f1": 0.055256766821974626
+  },
+  {
+   "model": "clip_l14",
+   "template": "landcover",
+   "category": "Remote sensing",
+   "prompt": "land cover classification of {}.",
+   "accuracy": 0.07995370370370371,
+   "balanced_accuracy": 0.07720833333333334,
+   "macro_precision": 0.20638679338276705,
+   "macro_recall": 0.07720833333333334,
+   "macro_f1": 0.03935552986666198,
+   "weighted_f1": 0.03898906848682597,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "dev_macro_f1": 0.04156500844042531
+  },
+  {
+   "model": "clip_l14",
+   "template": "structure",
+   "category": "Structural",
+   "prompt": "spatial pattern of {} from above.",
+   "accuracy": 0.10736111111111112,
+   "balanced_accuracy": 0.11399166666666664,
+   "macro_precision": 0.14817440980640453,
+   "macro_recall": 0.11399166666666664,
+   "macro_f1": 0.048737417954055264,
+   "weighted_f1": 0.04810477157313061,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.05225597744714648
+  },
+  {
+   "model": "clip_l14",
+   "template": "texture_gray",
+   "category": "Structural",
+   "prompt": "grayscale texture pattern of {}.",
+   "accuracy": 0.12041666666666667,
+   "balanced_accuracy": 0.12249166666666667,
+   "macro_precision": 0.09241284206511827,
+   "macro_recall": 0.12249166666666667,
+   "macro_f1": 0.06871125253765661,
+   "weighted_f1": 0.06778834359551551,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.07152410345272545
+  },
+  {
+   "model": "clip_l14",
+   "template": "ensemble",
+   "category": "Ensemble",
+   "prompt": "mean of all 10 templates",
+   "accuracy": 0.1338888888888889,
+   "balanced_accuracy": 0.13145833333333334,
+   "macro_precision": 0.13263081188246645,
+   "macro_recall": 0.13145833333333334,
+   "macro_f1": 0.0800968229040509,
+   "weighted_f1": 0.08201663033681413,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "dev_macro_f1": 0.082765449784286
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "generic",
+   "category": "General",
+   "prompt": "a satellite image of {}.",
+   "accuracy": 0.11328703703703703,
+   "balanced_accuracy": 0.10243333333333333,
+   "macro_precision": 0.08792195407479793,
+   "macro_recall": 0.10243333333333333,
+   "macro_f1": 0.02575232119485863,
+   "weighted_f1": 0.027599707934515782,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "dev_macro_f1": 0.026498624320284235
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "photo",
+   "category": "General",
+   "prompt": "a photo of {}.",
+   "accuracy": 0.11592592592592593,
+   "balanced_accuracy": 0.10563333333333333,
+   "macro_precision": 0.09868404796902915,
+   "macro_recall": 0.10563333333333333,
+   "macro_f1": 0.044913873411335584,
+   "weighted_f1": 0.04730052831593494,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.04574807735817156
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "aerial",
+   "category": "Spatial",
+   "prompt": "an aerial view of {}.",
+   "accuracy": 0.11291666666666667,
+   "balanced_accuracy": 0.10192083333333335,
+   "macro_precision": 0.14313096119247976,
+   "macro_recall": 0.10192083333333335,
+   "macro_f1": 0.025781143595866075,
+   "weighted_f1": 0.02799934352992509,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.02525573222955929
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "sar_basic",
+   "category": "SAR-specific",
+   "prompt": "radar imagery showing {}.",
+   "accuracy": 0.10407407407407407,
+   "balanced_accuracy": 0.09493333333333333,
+   "macro_precision": 0.09289199218730133,
+   "macro_recall": 0.09493333333333333,
+   "macro_f1": 0.03849086929145673,
+   "weighted_f1": 0.0403437348217983,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.04022915871224956
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "sar_backscatter",
+   "category": "SAR-specific",
+   "prompt": "SAR backscatter pattern of {}.",
+   "accuracy": 0.12032407407407407,
+   "balanced_accuracy": 0.117725,
+   "macro_precision": 0.08249086112884917,
+   "macro_recall": 0.117725,
+   "macro_f1": 0.06050782454621405,
+   "weighted_f1": 0.05966509108225343,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.062285909771426895
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "sar_texture",
+   "category": "SAR-specific",
+   "prompt": "grayscale radar texture of {}.",
+   "accuracy": 0.12231481481481482,
+   "balanced_accuracy": 0.11086666666666667,
+   "macro_precision": 0.11444520499954218,
+   "macro_recall": 0.11086666666666667,
+   "macro_f1": 0.0523262439145599,
+   "weighted_f1": 0.05651074874558516,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.05150550427742227
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "sentinel",
+   "category": "Remote sensing",
+   "prompt": "a Sentinel-1 satellite image of {}.",
+   "accuracy": 0.11407407407407408,
+   "balanced_accuracy": 0.1035,
+   "macro_precision": 0.08119693371351835,
+   "macro_recall": 0.1035,
+   "macro_f1": 0.029561761044068567,
+   "weighted_f1": 0.031145894409064383,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.03285828032941796
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "landcover",
+   "category": "Remote sensing",
+   "prompt": "land cover classification of {}.",
+   "accuracy": 0.11282407407407408,
+   "balanced_accuracy": 0.10200000000000002,
+   "macro_precision": 0.17263049228999144,
+   "macro_recall": 0.10200000000000002,
+   "macro_f1": 0.02667778838773708,
+   "weighted_f1": 0.0286479531373787,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.028746730636270635
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "structure",
+   "category": "Structural",
+   "prompt": "spatial pattern of {} from above.",
+   "accuracy": 0.09888888888888889,
+   "balanced_accuracy": 0.10381666666666667,
+   "macro_precision": 0.16896377408199553,
+   "macro_recall": 0.10381666666666667,
+   "macro_f1": 0.03361645343293005,
+   "weighted_f1": 0.032734159334592304,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.03293179215487708
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "texture_gray",
+   "category": "Structural",
+   "prompt": "grayscale texture pattern of {}.",
+   "accuracy": 0.11435185185185186,
+   "balanced_accuracy": 0.10364999999999999,
+   "macro_precision": 0.10850152200459906,
+   "macro_recall": 0.10364999999999999,
+   "macro_f1": 0.05231900652092482,
+   "weighted_f1": 0.05662785286045858,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.05754042010335787
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "ensemble",
+   "category": "Ensemble",
+   "prompt": "mean of all 10 templates",
+   "accuracy": 0.11037037037037037,
+   "balanced_accuracy": 0.10193333333333332,
+   "macro_precision": 0.08013667197323354,
+   "macro_recall": 0.10193333333333332,
+   "macro_f1": 0.05084892358015577,
+   "weighted_f1": 0.05197431080819535,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.054482165416923786
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "generic",
+   "category": "General",
+   "prompt": "a satellite image of {}.",
+   "accuracy": 0.11689814814814815,
+   "balanced_accuracy": 0.106375,
+   "macro_precision": 0.11197960714749948,
+   "macro_recall": 0.106375,
+   "macro_f1": 0.0334548229715431,
+   "weighted_f1": 0.03475017349909549,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "dev_macro_f1": 0.0361383480443085
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "photo",
+   "category": "General",
+   "prompt": "a photo of {}.",
+   "accuracy": 0.12347222222222222,
+   "balanced_accuracy": 0.11348333333333334,
+   "macro_precision": 0.11031646873543861,
+   "macro_recall": 0.11348333333333334,
+   "macro_f1": 0.04585198460299806,
+   "weighted_f1": 0.04636958340976818,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.04828597327160104
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "aerial",
+   "category": "Spatial",
+   "prompt": "an aerial view of {}.",
+   "accuracy": 0.09342592592592593,
+   "balanced_accuracy": 0.084925,
+   "macro_precision": 0.13264781420726615,
+   "macro_recall": 0.084925,
+   "macro_f1": 0.03479049811823372,
+   "weighted_f1": 0.036876498772523844,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "dev_macro_f1": 0.034795945209108906
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "sar_basic",
+   "category": "SAR-specific",
+   "prompt": "radar imagery showing {}.",
+   "accuracy": 0.11814814814814815,
+   "balanced_accuracy": 0.10769166666666667,
+   "macro_precision": 0.12884758044072603,
+   "macro_recall": 0.10769166666666667,
+   "macro_f1": 0.03658930756467219,
+   "weighted_f1": 0.037867603802065566,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.03870648885863433
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "sar_backscatter",
+   "category": "SAR-specific",
+   "prompt": "SAR backscatter pattern of {}.",
+   "accuracy": 0.10166666666666667,
+   "balanced_accuracy": 0.09294166666666667,
+   "macro_precision": 0.12879443874089383,
+   "macro_recall": 0.09294166666666667,
+   "macro_f1": 0.04405477800840747,
+   "weighted_f1": 0.046007876663424555,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.04547185117586479
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "sar_texture",
+   "category": "SAR-specific",
+   "prompt": "grayscale radar texture of {}.",
+   "accuracy": 0.11805555555555555,
+   "balanced_accuracy": 0.10771666666666666,
+   "macro_precision": 0.12248488740903796,
+   "macro_recall": 0.10771666666666666,
+   "macro_f1": 0.04283918932106185,
+   "weighted_f1": 0.04461169387508417,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.0478366129258605
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "sentinel",
+   "category": "Remote sensing",
+   "prompt": "a Sentinel-1 satellite image of {}.",
+   "accuracy": 0.11578703703703704,
+   "balanced_accuracy": 0.10520833333333335,
+   "macro_precision": 0.1232668894802291,
+   "macro_recall": 0.10520833333333335,
+   "macro_f1": 0.0319086533130288,
+   "weighted_f1": 0.03335861159669657,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.0351509648930963
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "landcover",
+   "category": "Remote sensing",
+   "prompt": "land cover classification of {}.",
+   "accuracy": 0.12046296296296297,
+   "balanced_accuracy": 0.11003333333333334,
+   "macro_precision": 0.134595858445526,
+   "macro_recall": 0.11003333333333334,
+   "macro_f1": 0.04733716680415639,
+   "weighted_f1": 0.04933234260653317,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.05016028044293998
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "structure",
+   "category": "Structural",
+   "prompt": "spatial pattern of {} from above.",
+   "accuracy": 0.10657407407407407,
+   "balanced_accuracy": 0.09665833333333333,
+   "macro_precision": 0.13799449113887635,
+   "macro_recall": 0.09665833333333333,
+   "macro_f1": 0.032029862034184946,
+   "weighted_f1": 0.03401156033215303,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "dev_macro_f1": 0.03383050845653507
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "texture_gray",
+   "category": "Structural",
+   "prompt": "grayscale texture pattern of {}.",
+   "accuracy": 0.11606481481481482,
+   "balanced_accuracy": 0.10528333333333333,
+   "macro_precision": 0.1223054461759399,
+   "macro_recall": 0.10528333333333333,
+   "macro_f1": 0.030475130035018526,
+   "weighted_f1": 0.03211688515361505,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.0315971346222946
+  },
+  {
+   "model": "remoteclip_l14",
+   "template": "ensemble",
+   "category": "Ensemble",
+   "prompt": "mean of all 10 templates",
+   "accuracy": 0.11180555555555556,
+   "balanced_accuracy": 0.10203333333333334,
+   "macro_precision": 0.12605681304424568,
+   "macro_recall": 0.10203333333333334,
+   "macro_f1": 0.038517962606399184,
+   "weighted_f1": 0.03991594099026279,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "dev_macro_f1": 0.040431268019290055
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "generic",
+   "category": "General",
+   "prompt": "a satellite image of {}.",
+   "accuracy": 0.11314814814814815,
+   "balanced_accuracy": 0.103075,
+   "macro_precision": 0.13705171453403694,
+   "macro_recall": 0.103075,
+   "macro_f1": 0.04663102609267698,
+   "weighted_f1": 0.05003928073506725,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.0468224051425727
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "photo",
+   "category": "General",
+   "prompt": "a photo of {}.",
+   "accuracy": 0.10476851851851852,
+   "balanced_accuracy": 0.09486666666666667,
+   "macro_precision": 0.16675869989594877,
+   "macro_recall": 0.09486666666666667,
+   "macro_f1": 0.04143830959799642,
+   "weighted_f1": 0.044840435394433976,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.042102745943395053
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "aerial",
+   "category": "Spatial",
+   "prompt": "an aerial view of {}.",
+   "accuracy": 0.08296296296296296,
+   "balanced_accuracy": 0.07500833333333333,
+   "macro_precision": 0.14599591815086033,
+   "macro_recall": 0.07500833333333333,
+   "macro_f1": 0.03880804132548365,
+   "weighted_f1": 0.04240525049622033,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.03869333559031453
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "sar_basic",
+   "category": "SAR-specific",
+   "prompt": "radar imagery showing {}.",
+   "accuracy": 0.11847222222222223,
+   "balanced_accuracy": 0.10755833333333334,
+   "macro_precision": 0.14092889252047958,
+   "macro_recall": 0.10755833333333334,
+   "macro_f1": 0.07695334260046385,
+   "weighted_f1": 0.0840820939648779,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.07788204204384312
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "sar_backscatter",
+   "category": "SAR-specific",
+   "prompt": "SAR backscatter pattern of {}.",
+   "accuracy": 0.20601851851851852,
+   "balanced_accuracy": 0.18754166666666666,
+   "macro_precision": 0.12650802668251862,
+   "macro_recall": 0.18754166666666666,
+   "macro_f1": 0.10699129678091537,
+   "weighted_f1": 0.11526497445828499,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.10785442456020007
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "sar_texture",
+   "category": "SAR-specific",
+   "prompt": "grayscale radar texture of {}.",
+   "accuracy": 0.17083333333333334,
+   "balanced_accuracy": 0.15999583333333334,
+   "macro_precision": 0.15848396312867136,
+   "macro_recall": 0.15999583333333334,
+   "macro_f1": 0.11127238779593258,
+   "weighted_f1": 0.11699677843416703,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "dev_macro_f1": 0.11248298455373695
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "sentinel",
+   "category": "Remote sensing",
+   "prompt": "a Sentinel-1 satellite image of {}.",
+   "accuracy": 0.15597222222222223,
+   "balanced_accuracy": 0.1482333333333333,
+   "macro_precision": 0.12005972873702815,
+   "macro_recall": 0.1482333333333333,
+   "macro_f1": 0.08914174068531122,
+   "weighted_f1": 0.09635264303443898,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.09145448727950635
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "landcover",
+   "category": "Remote sensing",
+   "prompt": "land cover classification of {}.",
+   "accuracy": 0.1871759259259259,
+   "balanced_accuracy": 0.17054166666666665,
+   "macro_precision": 0.10767475054347111,
+   "macro_recall": 0.17054166666666665,
+   "macro_f1": 0.10061925347343961,
+   "weighted_f1": 0.10896397719742347,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "dev_macro_f1": 0.10640024045734704
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "structure",
+   "category": "Structural",
+   "prompt": "spatial pattern of {} from above.",
+   "accuracy": 0.16148148148148148,
+   "balanced_accuracy": 0.14728333333333335,
+   "macro_precision": 0.10169974264649322,
+   "macro_recall": 0.14728333333333335,
+   "macro_f1": 0.08340721471863062,
+   "weighted_f1": 0.08936379443702967,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.08406320508665618
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "texture_gray",
+   "category": "Structural",
+   "prompt": "grayscale texture pattern of {}.",
+   "accuracy": 0.20824074074074075,
+   "balanced_accuracy": 0.19523333333333334,
+   "macro_precision": 0.12981696063530962,
+   "macro_recall": 0.19523333333333334,
+   "macro_f1": 0.12754891388511083,
+   "weighted_f1": 0.13403602637521564,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.13282126270608077
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "ensemble",
+   "category": "Ensemble",
+   "prompt": "mean of all 10 templates",
+   "accuracy": 0.15421296296296297,
+   "balanced_accuracy": 0.14033333333333334,
+   "macro_precision": 0.20884837229360467,
+   "macro_recall": 0.14033333333333334,
+   "macro_f1": 0.12109495691721983,
+   "weighted_f1": 0.13190865151279793,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "dev_macro_f1": 0.12216686069223978
+  }
+ ],
+ "model_mode": [
+  {
+   "model": "clip_b32",
+   "mode": "vv",
+   "template": "sar_backscatter",
+   "accuracy": 0.09791666666666667,
+   "balanced_accuracy": 0.088975,
+   "macro_precision": 0.1833332800300535,
+   "macro_recall": 0.088975,
+   "macro_f1": 0.06333488771865146,
+   "weighted_f1": 0.06918790390975321,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.09416666666666666,
+    0.10194675925925926
+   ],
+   "macro_f1_ci": [
+    0.060697877566588884,
+    0.06610187488977425
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "mode": "vh",
+   "template": "sar_backscatter",
+   "accuracy": 0.12703703703703703,
+   "balanced_accuracy": 0.11505833333333333,
+   "macro_precision": 0.107699292958785,
+   "macro_recall": 0.11505833333333333,
+   "macro_f1": 0.06413527082238256,
+   "weighted_f1": 0.07007097252435877,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12268402777777779,
+    0.13176041666666669
+   ],
+   "macro_f1_ci": [
+    0.061902728735938724,
+    0.06662958481858283
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "mode": "dual",
+   "template": "landcover",
+   "accuracy": 0.18902777777777777,
+   "balanced_accuracy": 0.17376666666666668,
+   "macro_precision": 0.32634555695165146,
+   "macro_recall": 0.17376666666666668,
+   "macro_f1": 0.11291893340975223,
+   "weighted_f1": 0.12242391889999905,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.18435185185185185,
+    0.19407638888888887
+   ],
+   "macro_f1_ci": [
+    0.11093007908202164,
+    0.11541035431934998
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "mode": "vv",
+   "template": "generic",
+   "accuracy": 0.1272222222222222,
+   "balanced_accuracy": 0.13117916666666665,
+   "macro_precision": 0.18045060376482197,
+   "macro_recall": 0.13117916666666665,
+   "macro_f1": 0.10300394659847092,
+   "weighted_f1": 0.10008129791181253,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12273032407407408,
+    0.1313923611111111
+   ],
+   "macro_f1_ci": [
+    0.09919867778340899,
+    0.1070755388051567
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "mode": "vh",
+   "template": "generic",
+   "accuracy": 0.12611111111111112,
+   "balanced_accuracy": 0.13055416666666667,
+   "macro_precision": 0.19255022666924937,
+   "macro_recall": 0.13055416666666667,
+   "macro_f1": 0.10530970103890183,
+   "weighted_f1": 0.10264581066800686,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12157291666666667,
+    0.13087962962962962
+   ],
+   "macro_f1_ci": [
+    0.10108563752970105,
+    0.10936430783028438
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "mode": "dual",
+   "template": "landcover",
+   "accuracy": 0.22814814814814816,
+   "balanced_accuracy": 0.20746666666666663,
+   "macro_precision": 0.29182306620354553,
+   "macro_recall": 0.20746666666666663,
+   "macro_f1": 0.14353668269638786,
+   "weighted_f1": 0.15702826619505394,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.22286921296296294,
+    0.2339351851851852
+   ],
+   "macro_f1_ci": [
+    0.14054589468283177,
+    0.14665333107218317
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "mode": "vv",
+   "template": "sar_backscatter",
+   "accuracy": 0.12032407407407407,
+   "balanced_accuracy": 0.117725,
+   "macro_precision": 0.08249086112884917,
+   "macro_recall": 0.117725,
+   "macro_f1": 0.06050782454621405,
+   "weighted_f1": 0.05966509108225343,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11578703703703704,
+    0.12449189814814814
+   ],
+   "macro_f1_ci": [
+    0.05860605907618112,
+    0.06252697075211364
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "mode": "vh",
+   "template": "sar_backscatter",
+   "accuracy": 0.12092592592592592,
+   "balanced_accuracy": 0.1147125,
+   "macro_precision": 0.09171296673977221,
+   "macro_recall": 0.1147125,
+   "macro_f1": 0.06138191307103371,
+   "weighted_f1": 0.06241073366501772,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11661921296296297,
+    0.12550925925925926
+   ],
+   "macro_f1_ci": [
+    0.05882829487444493,
+    0.06353915741946926
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "mode": "dual",
+   "template": "sar_texture",
+   "accuracy": 0.11481481481481481,
+   "balanced_accuracy": 0.10338333333333331,
+   "macro_precision": 0.09057238390143266,
+   "macro_recall": 0.10338333333333331,
+   "macro_f1": 0.026554507861725807,
+   "weighted_f1": 0.02939472475399918,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11046180555555556,
+    0.11916782407407407
+   ],
+   "macro_f1_ci": [
+    0.025306607185234475,
+    0.027697102467285482
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "mode": "vv",
+   "template": "landcover",
+   "accuracy": 0.12046296296296297,
+   "balanced_accuracy": 0.11003333333333334,
+   "macro_precision": 0.134595858445526,
+   "macro_recall": 0.11003333333333334,
+   "macro_f1": 0.04733716680415639,
+   "weighted_f1": 0.04933234260653317,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11592476851851853,
+    0.12476967592592592
+   ],
+   "macro_f1_ci": [
+    0.04445246273231326,
+    0.05015331696336453
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "mode": "vh",
+   "template": "landcover",
+   "accuracy": 0.1263425925925926,
+   "balanced_accuracy": 0.11411666666666664,
+   "macro_precision": 0.15575449504383249,
+   "macro_recall": 0.11411666666666664,
+   "macro_f1": 0.04755046518547511,
+   "weighted_f1": 0.051949006317826604,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12198842592592593,
+    0.13069444444444445
+   ],
+   "macro_f1_ci": [
+    0.04485835264491781,
+    0.050319408276628036
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "mode": "dual",
+   "template": "landcover",
+   "accuracy": 0.12782407407407406,
+   "balanced_accuracy": 0.12318749999999998,
+   "macro_precision": 0.17539111235263333,
+   "macro_recall": 0.12318749999999998,
+   "macro_f1": 0.055971539111730015,
+   "weighted_f1": 0.05585514299107201,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12333101851851852,
+    0.1322685185185185
+   ],
+   "macro_f1_ci": [
+    0.05320848121085161,
+    0.05888110535392954
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "mode": "vv",
+   "template": "texture_gray",
+   "accuracy": 0.20824074074074075,
+   "balanced_accuracy": 0.19523333333333334,
+   "macro_precision": 0.12981696063530962,
+   "macro_recall": 0.19523333333333334,
+   "macro_f1": 0.12754891388511083,
+   "weighted_f1": 0.13403602637521564,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.20282291666666666,
+    0.21342592592592594
+   ],
+   "macro_f1_ci": [
+    0.12438958484898834,
+    0.13094284120880964
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "mode": "vh",
+   "template": "texture_gray",
+   "accuracy": 0.13814814814814816,
+   "balanced_accuracy": 0.12847499999999998,
+   "macro_precision": 0.13208031800111597,
+   "macro_recall": 0.12847499999999998,
+   "macro_f1": 0.08848406625169798,
+   "weighted_f1": 0.09150051973404678,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "accuracy_ci": [
+    0.13393402777777777,
+    0.1427326388888889
+   ],
+   "macro_f1_ci": [
+    0.08553039544792658,
+    0.0916645902040621
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "mode": "dual",
+   "template": "landcover",
+   "accuracy": 0.11587962962962962,
+   "balanced_accuracy": 0.10431666666666665,
+   "macro_precision": 0.07241079145807053,
+   "macro_recall": 0.10431666666666665,
+   "macro_f1": 0.029360268914572607,
+   "weighted_f1": 0.03256794777890735,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11161921296296297,
+    0.12018518518518519
+   ],
+   "macro_f1_ci": [
+    0.027739995333120774,
+    0.031181384400163412
+   ]
+  }
+ ],
+ "mcnemar": {
+  "clip_b32_vs_remoteclip_b32_vv": {
+   "chi2": 51.070271453590195,
+   "p": 8.911779661547157e-13,
+   "only_1_correct": 2042,
+   "only_2_correct": 2526
+  },
+  "clip_l14_vs_remoteclip_l14_vv": {
+   "chi2": 5.227498756837394,
+   "p": 0.022232481508593135,
+   "only_1_correct": 2084,
+   "only_2_correct": 1938
+  },
+  "clip_b32_vs_georsclip_b32_vv": {
+   "chi2": 1261.7131420947298,
+   "p": 2.3636792303115006e-276,
+   "only_1_correct": 1057,
+   "only_2_correct": 3440
+  },
+  "clip_b32_vs_clip_l14_vv": {
+   "chi2": 94.27047439225868,
+   "p": 2.7522515249865597e-22,
+   "only_1_correct": 1802,
+   "only_2_correct": 2435
+  },
+  "remoteclip_b32_vs_remoteclip_l14_vv": {
+   "chi2": 0.0018256503879507074,
+   "p": 0.9659186539120775,
+   "only_1_correct": 1094,
+   "only_2_correct": 1097
+  },
+  "clip_b32_vv_vs_dual": {
+   "chi2": 844.0421029668412,
+   "p": 1.4349311837850834e-185,
+   "only_1_correct": 1308,
+   "only_2_correct": 3276
+  },
+  "clip_l14_vv_vs_dual": {
+   "chi2": 684.5503171856978,
+   "p": 6.845301501797159e-151,
+   "only_1_correct": 2378,
+   "only_2_correct": 4558
+  },
+  "remoteclip_b32_vv_vs_dual": {
+   "chi2": 6.136624063464081,
+   "p": 0.013240987213748555,
+   "only_1_correct": 1194,
+   "only_2_correct": 1075
+  },
+  "remoteclip_l14_vv_vs_dual": {
+   "chi2": 22.34914950760967,
+   "p": 2.2731369810232486e-06,
+   "only_1_correct": 479,
+   "only_2_correct": 638
+  },
+  "georsclip_b32_vv_vs_dual": {
+   "chi2": 632.0197106978222,
+   "p": 1.817832605002963e-139,
+   "only_1_correct": 4143,
+   "only_2_correct": 2148
+  }
+ },
+ "techniques": [
+  {
+   "model": "clip_b32",
+   "technique": "baseline",
+   "template": "sar_backscatter",
+   "accuracy": 0.09791666666666667,
+   "balanced_accuracy": 0.088975,
+   "macro_precision": 0.1833332800300535,
+   "macro_recall": 0.088975,
+   "macro_f1": 0.06333488771865146,
+   "weighted_f1": 0.06918790390975321,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.09416666666666666,
+    0.10194675925925926
+   ],
+   "macro_f1_ci": [
+    0.060697877566588884,
+    0.06610187488977425
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "technique": "ensemble",
+   "template": "sar_backscatter",
+   "accuracy": 0.10712962962962963,
+   "balanced_accuracy": 0.09688333333333334,
+   "macro_precision": 0.09538683713424297,
+   "macro_recall": 0.09688333333333334,
+   "macro_f1": 0.0427194127838877,
+   "weighted_f1": 0.0465528239921194,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10328587962962964,
+    0.11102083333333333
+   ],
+   "macro_f1_ci": [
+    0.040913225908574866,
+    0.04469049607386326
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "technique": "physics",
+   "template": "sar_backscatter",
+   "accuracy": 0.11990740740740741,
+   "balanced_accuracy": 0.10839166666666666,
+   "macro_precision": 0.05771790950331901,
+   "macro_recall": 0.10839166666666666,
+   "macro_f1": 0.03624820145764711,
+   "weighted_f1": 0.039291578413184695,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11546180555555556,
+    0.12416666666666666
+   ],
+   "macro_f1_ci": [
+    0.034651381813860405,
+    0.0379429431048626
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "technique": "tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.07995370370370371,
+   "balanced_accuracy": 0.07249166666666666,
+   "macro_precision": 0.17951933518130908,
+   "macro_recall": 0.07249166666666666,
+   "macro_f1": 0.051485907390832863,
+   "weighted_f1": 0.056394109251622956,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.07634143518518519,
+    0.08347337962962963
+   ],
+   "macro_f1_ci": [
+    0.048977790417489314,
+    0.05381032651937472
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "technique": "ensemble+tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.10550925925925926,
+   "balanced_accuracy": 0.09524166666666666,
+   "macro_precision": 0.1331129636198213,
+   "macro_recall": 0.09524166666666666,
+   "macro_f1": 0.039039063889135,
+   "weighted_f1": 0.04278819765677898,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10180439814814815,
+    0.10944444444444444
+   ],
+   "macro_f1_ci": [
+    0.037274413346276694,
+    0.04069669505253871
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "technique": "physics+ensemble+tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.08986111111111111,
+   "balanced_accuracy": 0.08121666666666667,
+   "macro_precision": 0.12873702563599368,
+   "macro_recall": 0.08121666666666667,
+   "macro_f1": 0.03609967511479789,
+   "weighted_f1": 0.03937399530972912,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.0863425925925926,
+    0.09356712962962963
+   ],
+   "macro_f1_ci": [
+    0.03394923009819169,
+    0.038363834849042336
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "technique": "baseline",
+   "template": "generic",
+   "accuracy": 0.1272222222222222,
+   "balanced_accuracy": 0.13117916666666665,
+   "macro_precision": 0.18045060376482197,
+   "macro_recall": 0.13117916666666665,
+   "macro_f1": 0.10300394659847092,
+   "weighted_f1": 0.10008129791181253,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12273032407407408,
+    0.1313923611111111
+   ],
+   "macro_f1_ci": [
+    0.09919867778340899,
+    0.1070755388051567
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "technique": "ensemble",
+   "template": "generic",
+   "accuracy": 0.1338888888888889,
+   "balanced_accuracy": 0.13145833333333334,
+   "macro_precision": 0.13263081188246645,
+   "macro_recall": 0.13145833333333334,
+   "macro_f1": 0.0800968229040509,
+   "weighted_f1": 0.08201663033681413,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.12935185185185186,
+    0.1386574074074074
+   ],
+   "macro_f1_ci": [
+    0.07720013748516405,
+    0.08305296342540101
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "technique": "physics",
+   "template": "generic",
+   "accuracy": 0.14347222222222222,
+   "balanced_accuracy": 0.14575416666666668,
+   "macro_precision": 0.1317304130239883,
+   "macro_recall": 0.14575416666666668,
+   "macro_f1": 0.11293514122147146,
+   "weighted_f1": 0.1109299430854386,
+   "n_predicted_classes": 9,
+   "n": 21600,
+   "accuracy_ci": [
+    0.1387939814814815,
+    0.14837962962962964
+   ],
+   "macro_f1_ci": [
+    0.10967581916034007,
+    0.11680261340215856
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "baseline",
+   "template": "sar_backscatter",
+   "accuracy": 0.12032407407407407,
+   "balanced_accuracy": 0.117725,
+   "macro_precision": 0.08249086112884917,
+   "macro_recall": 0.117725,
+   "macro_f1": 0.06050782454621405,
+   "weighted_f1": 0.05966509108225343,
+   "n_predicted_classes": 8,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11578703703703704,
+    0.12449189814814814
+   ],
+   "macro_f1_ci": [
+    0.05860605907618112,
+    0.06252697075211364
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "ensemble",
+   "template": "sar_backscatter",
+   "accuracy": 0.11037037037037037,
+   "balanced_accuracy": 0.10193333333333332,
+   "macro_precision": 0.08013667197323354,
+   "macro_recall": 0.10193333333333332,
+   "macro_f1": 0.05084892358015577,
+   "weighted_f1": 0.05197431080819535,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10625,
+    0.11472337962962963
+   ],
+   "macro_f1_ci": [
+    0.04841418862322751,
+    0.05347564994159788
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "physics",
+   "template": "sar_backscatter",
+   "accuracy": 0.16541666666666666,
+   "balanced_accuracy": 0.16194166666666665,
+   "macro_precision": 0.12014128202883385,
+   "macro_recall": 0.16194166666666665,
+   "macro_f1": 0.07760929246212875,
+   "weighted_f1": 0.08191336917410802,
+   "n_predicted_classes": 10,
+   "n": 21600,
+   "accuracy_ci": [
+    0.16046180555555556,
+    0.17023148148148148
+   ],
+   "macro_f1_ci": [
+    0.07567296678621561,
+    0.07959932421416598
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.11726851851851852,
+   "balanced_accuracy": 0.11485833333333335,
+   "macro_precision": 0.17902514826238708,
+   "macro_recall": 0.11485833333333335,
+   "macro_f1": 0.05885547768266978,
+   "weighted_f1": 0.057764702032600465,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11296296296296296,
+    0.12157523148148147
+   ],
+   "macro_f1_ci": [
+    0.05694457497730694,
+    0.060817377215372795
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "ensemble+tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.10875,
+   "balanced_accuracy": 0.09990833333333334,
+   "macro_precision": 0.09965063557231596,
+   "macro_recall": 0.09990833333333334,
+   "macro_f1": 0.04382064985906953,
+   "weighted_f1": 0.04499196895900737,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10458217592592593,
+    0.11287037037037037
+   ],
+   "macro_f1_ci": [
+    0.04145688131550008,
+    0.04637610459623563
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "technique": "physics+ensemble+tta",
+   "template": "sar_backscatter",
+   "accuracy": 0.09564814814814815,
+   "balanced_accuracy": 0.09017499999999999,
+   "macro_precision": 0.08792707976816783,
+   "macro_recall": 0.09017499999999999,
+   "macro_f1": 0.051336379855934186,
+   "weighted_f1": 0.05156954805938581,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.09185185185185185,
+    0.09953819444444444
+   ],
+   "macro_f1_ci": [
+    0.04924574601940256,
+    0.05346457369791602
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "technique": "baseline",
+   "template": "landcover",
+   "accuracy": 0.12046296296296297,
+   "balanced_accuracy": 0.11003333333333334,
+   "macro_precision": 0.134595858445526,
+   "macro_recall": 0.11003333333333334,
+   "macro_f1": 0.04733716680415639,
+   "weighted_f1": 0.04933234260653317,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.11592476851851853,
+    0.12476967592592592
+   ],
+   "macro_f1_ci": [
+    0.04445246273231326,
+    0.05015331696336453
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "technique": "ensemble",
+   "template": "landcover",
+   "accuracy": 0.11180555555555556,
+   "balanced_accuracy": 0.10203333333333334,
+   "macro_precision": 0.12605681304424568,
+   "macro_recall": 0.10203333333333334,
+   "macro_f1": 0.038517962606399184,
+   "weighted_f1": 0.03991594099026279,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10740625000000001,
+    0.11588078703703703
+   ],
+   "macro_f1_ci": [
+    0.03622384300424867,
+    0.041223193753773556
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "technique": "physics",
+   "template": "landcover",
+   "accuracy": 0.11189814814814815,
+   "balanced_accuracy": 0.10445833333333335,
+   "macro_precision": 0.19252875457627794,
+   "macro_recall": 0.10445833333333335,
+   "macro_f1": 0.07122368780389307,
+   "weighted_f1": 0.07240886138709152,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.10823842592592592,
+    0.1162962962962963
+   ],
+   "macro_f1_ci": [
+    0.0686429983170104,
+    0.07398748484702765
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "baseline",
+   "template": "texture_gray",
+   "accuracy": 0.20824074074074075,
+   "balanced_accuracy": 0.19523333333333334,
+   "macro_precision": 0.12981696063530962,
+   "macro_recall": 0.19523333333333334,
+   "macro_f1": 0.12754891388511083,
+   "weighted_f1": 0.13403602637521564,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.20282291666666666,
+    0.21342592592592594
+   ],
+   "macro_f1_ci": [
+    0.12438958484898834,
+    0.13094284120880964
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "ensemble",
+   "template": "texture_gray",
+   "accuracy": 0.15421296296296297,
+   "balanced_accuracy": 0.14033333333333334,
+   "macro_precision": 0.20884837229360467,
+   "macro_recall": 0.14033333333333334,
+   "macro_f1": 0.12109495691721983,
+   "weighted_f1": 0.13190865151279793,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.14930439814814814,
+    0.15912037037037038
+   ],
+   "macro_f1_ci": [
+    0.11722685996124953,
+    0.12448475822591176
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "physics",
+   "template": "texture_gray",
+   "accuracy": 0.19675925925925927,
+   "balanced_accuracy": 0.18775833333333333,
+   "macro_precision": 0.12234190659010269,
+   "macro_recall": 0.18775833333333333,
+   "macro_f1": 0.1128782874651397,
+   "weighted_f1": 0.1147875866866133,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.19152662037037035,
+    0.20162037037037037
+   ],
+   "macro_f1_ci": [
+    0.10997262098020523,
+    0.11571043780233381
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "tta",
+   "template": "texture_gray",
+   "accuracy": 0.21180555555555555,
+   "balanced_accuracy": 0.19953333333333334,
+   "macro_precision": 0.1335241171687512,
+   "macro_recall": 0.19953333333333334,
+   "macro_f1": 0.12904312346130323,
+   "weighted_f1": 0.1350400445221487,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.2060625,
+    0.21703819444444444
+   ],
+   "macro_f1_ci": [
+    0.1259533395292018,
+    0.1321852827189733
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "ensemble+tta",
+   "template": "texture_gray",
+   "accuracy": 0.14680555555555555,
+   "balanced_accuracy": 0.13353333333333334,
+   "macro_precision": 0.14988517982084248,
+   "macro_recall": 0.13353333333333334,
+   "macro_f1": 0.11396190174748307,
+   "weighted_f1": 0.1242292719928888,
+   "n_predicted_classes": 7,
+   "n": 21600,
+   "accuracy_ci": [
+    0.14180555555555555,
+    0.15143749999999997
+   ],
+   "macro_f1_ci": [
+    0.1103048663150782,
+    0.11739422337909283
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "technique": "physics+ensemble+tta",
+   "template": "texture_gray",
+   "accuracy": 0.20416666666666666,
+   "balanced_accuracy": 0.18739166666666668,
+   "macro_precision": 0.15737485924454342,
+   "macro_recall": 0.18739166666666668,
+   "macro_f1": 0.15144123743679008,
+   "weighted_f1": 0.16292049167585732,
+   "n_predicted_classes": 6,
+   "n": 21600,
+   "accuracy_ci": [
+    0.1987025462962963,
+    0.20963078703703705
+   ],
+   "macro_f1_ci": [
+    0.14802312544681395,
+    0.15519576542156746
+   ]
+  }
+ ],
+ "hierarchical": [
+  {
+   "model": "clip_b32",
+   "hierarchy": "H3",
+   "method": "direct coarse prompts",
+   "template": "sar_backscatter",
+   "accuracy": 0.4320833333333333,
+   "balanced_accuracy": 0.3413592522446689,
+   "macro_precision": 0.32023535309360407,
+   "macro_recall": 0.3413592522446689,
+   "macro_f1": 0.31771523960267445,
+   "weighted_f1": 0.38037949632214246,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.4259201388888889,
+    0.4386585648148148
+   ],
+   "macro_f1_ci": [
+    0.3120481135376411,
+    0.32312758357199983
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "hierarchy": "H3",
+   "method": "fine prediction mapped to coarse",
+   "template": "sar_backscatter",
+   "accuracy": 0.3362962962962963,
+   "balanced_accuracy": 0.29367476851851854,
+   "macro_precision": 0.26728633298904664,
+   "macro_recall": 0.29367476851851854,
+   "macro_f1": 0.27410797155382616,
+   "weighted_f1": 0.31616000763071633,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3305532407407407,
+    0.3430578703703704
+   ],
+   "macro_f1_ci": [
+    0.2693105149424076,
+    0.2803903713755656
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "hierarchy": "H5",
+   "method": "direct coarse prompts",
+   "template": "landcover",
+   "accuracy": 0.3066203703703704,
+   "balanced_accuracy": 0.31841306818181814,
+   "macro_precision": 0.33034810593913316,
+   "macro_recall": 0.31841306818181814,
+   "macro_f1": 0.28994525322647857,
+   "weighted_f1": 0.29127310731504547,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.30013657407407407,
+    0.3127326388888889
+   ],
+   "macro_f1_ci": [
+    0.28450437295367054,
+    0.2957142611024375
+   ]
+  },
+  {
+   "model": "clip_b32",
+   "hierarchy": "H5",
+   "method": "fine prediction mapped to coarse",
+   "template": "sar_backscatter",
+   "accuracy": 0.23157407407407407,
+   "balanced_accuracy": 0.19496704545454543,
+   "macro_precision": 0.18789197593585336,
+   "macro_recall": 0.19496704545454543,
+   "macro_f1": 0.18368717869363418,
+   "weighted_f1": 0.21218232024861006,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.2260648148148148,
+    0.23731597222222223
+   ],
+   "macro_f1_ci": [
+    0.17908737171224787,
+    0.18964044715758593
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "hierarchy": "H3",
+   "method": "direct coarse prompts",
+   "template": "sar_texture",
+   "accuracy": 0.44199074074074074,
+   "balanced_accuracy": 0.3892901234567901,
+   "macro_precision": 0.36241884379764905,
+   "macro_recall": 0.3892901234567901,
+   "macro_f1": 0.3704075418153597,
+   "weighted_f1": 0.4281236504437011,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.43550810185185185,
+    0.4486585648148148
+   ],
+   "macro_f1_ci": [
+    0.36434160152303957,
+    0.3763576835908388
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "hierarchy": "H3",
+   "method": "fine prediction mapped to coarse",
+   "template": "generic",
+   "accuracy": 0.39944444444444444,
+   "balanced_accuracy": 0.30278093434343434,
+   "macro_precision": 0.28466317210112424,
+   "macro_recall": 0.30278093434343434,
+   "macro_f1": 0.2915992033578598,
+   "weighted_f1": 0.37922666196898813,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3928206018518518,
+    0.40597337962962965
+   ],
+   "macro_f1_ci": [
+    0.28733767807282407,
+    0.296347021108734
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "hierarchy": "H5",
+   "method": "direct coarse prompts",
+   "template": "structure",
+   "accuracy": 0.3246759259259259,
+   "balanced_accuracy": 0.23640795454545457,
+   "macro_precision": 0.3395218760288268,
+   "macro_recall": 0.23640795454545457,
+   "macro_f1": 0.16770561822444946,
+   "weighted_f1": 0.20580177019115106,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3181469907407407,
+    0.33125
+   ],
+   "macro_f1_ci": [
+    0.1628727923998534,
+    0.172399367506812
+   ]
+  },
+  {
+   "model": "clip_l14",
+   "hierarchy": "H5",
+   "method": "fine prediction mapped to coarse",
+   "template": "generic",
+   "accuracy": 0.25569444444444445,
+   "balanced_accuracy": 0.23021931818181823,
+   "macro_precision": 0.33675751341627513,
+   "macro_recall": 0.23021931818181823,
+   "macro_f1": 0.18736530920113115,
+   "weighted_f1": 0.21893229013558876,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.2499525462962963,
+    0.2615752314814815
+   ],
+   "macro_f1_ci": [
+    0.18247730839484105,
+    0.19178740952399595
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "hierarchy": "H3",
+   "method": "direct coarse prompts",
+   "template": "texture_gray",
+   "accuracy": 0.2797685185185185,
+   "balanced_accuracy": 0.2850348975869809,
+   "macro_precision": 0.2766466010488258,
+   "macro_recall": 0.2850348975869809,
+   "macro_f1": 0.25084386547936705,
+   "weighted_f1": 0.2655994237394943,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.2739814814814815,
+    0.28518750000000004
+   ],
+   "macro_f1_ci": [
+    0.24578368452669103,
+    0.25522146200636214
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "hierarchy": "H3",
+   "method": "fine prediction mapped to coarse",
+   "template": "sar_backscatter",
+   "accuracy": 0.4809259259259259,
+   "balanced_accuracy": 0.3801948302469136,
+   "macro_precision": 0.4181457974336245,
+   "macro_recall": 0.3801948302469136,
+   "macro_f1": 0.32132022297671853,
+   "weighted_f1": 0.38339992601440726,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.4740729166666667,
+    0.48754861111111114
+   ],
+   "macro_f1_ci": [
+    0.31596370309737254,
+    0.3259822713954931
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "hierarchy": "H5",
+   "method": "direct coarse prompts",
+   "template": "structure",
+   "accuracy": 0.29777777777777775,
+   "balanced_accuracy": 0.2092693181818182,
+   "macro_precision": 0.1603243965715368,
+   "macro_recall": 0.2092693181818182,
+   "macro_f1": 0.11561259069976662,
+   "weighted_f1": 0.15253112403507443,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "accuracy_ci": [
+    0.2914814814814815,
+    0.3039849537037037
+   ],
+   "macro_f1_ci": [
+    0.11182639316710792,
+    0.11896609350346352
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "hierarchy": "H5",
+   "method": "fine prediction mapped to coarse",
+   "template": "sar_backscatter",
+   "accuracy": 0.29347222222222225,
+   "balanced_accuracy": 0.21840625,
+   "macro_precision": 0.25273891526447445,
+   "macro_recall": 0.21840625,
+   "macro_f1": 0.15863990683377976,
+   "weighted_f1": 0.20071467591510486,
+   "n_predicted_classes": 5,
+   "n": 21600,
+   "accuracy_ci": [
+    0.28731249999999997,
+    0.2991678240740741
+   ],
+   "macro_f1_ci": [
+    0.15528682811930808,
+    0.16193984969744543
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "hierarchy": "H3",
+   "method": "direct coarse prompts",
+   "template": "sar_texture",
+   "accuracy": 0.2211574074074074,
+   "balanced_accuracy": 0.2847197671156005,
+   "macro_precision": 0.28103399194510126,
+   "macro_recall": 0.2847197671156005,
+   "macro_f1": 0.1698679164872365,
+   "weighted_f1": 0.1702159570891892,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.21569328703703702,
+    0.22666666666666666
+   ],
+   "macro_f1_ci": [
+    0.16570324219409308,
+    0.17398138822347028
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "hierarchy": "H3",
+   "method": "fine prediction mapped to coarse",
+   "template": "landcover",
+   "accuracy": 0.5132407407407408,
+   "balanced_accuracy": 0.36505611672278343,
+   "macro_precision": 0.38513363483014196,
+   "macro_recall": 0.36505611672278343,
+   "macro_f1": 0.2885805726856563,
+   "weighted_f1": 0.3746167683919729,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.5065277777777778,
+    0.5194479166666667
+   ],
+   "macro_f1_ci": [
+    0.2832350899590247,
+    0.2950134458466865
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "hierarchy": "H5",
+   "method": "direct coarse prompts",
+   "template": "sar_texture",
+   "accuracy": 0.2986574074074074,
+   "balanced_accuracy": 0.20236079545454544,
+   "macro_precision": 0.22305214406640123,
+   "macro_recall": 0.20236079545454544,
+   "macro_f1": 0.09644145452070078,
+   "weighted_f1": 0.1406370887493821,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.29259027777777774,
+    0.3049085648148148
+   ],
+   "macro_f1_ci": [
+    0.09450854209413201,
+    0.09863784482600017
+   ]
+  },
+  {
+   "model": "remoteclip_l14",
+   "hierarchy": "H5",
+   "method": "fine prediction mapped to coarse",
+   "template": "landcover",
+   "accuracy": 0.3114351851851852,
+   "balanced_accuracy": 0.2174630681818182,
+   "macro_precision": 0.1891946158595473,
+   "macro_recall": 0.2174630681818182,
+   "macro_f1": 0.13071774036851666,
+   "weighted_f1": 0.17545150833315185,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3051388888888889,
+    0.3179201388888889
+   ],
+   "macro_f1_ci": [
+    0.12762675874863172,
+    0.13445308689860244
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "hierarchy": "H3",
+   "method": "direct coarse prompts",
+   "template": "sar_backscatter",
+   "accuracy": 0.3222685185185185,
+   "balanced_accuracy": 0.42441287878787876,
+   "macro_precision": 0.2691153618708592,
+   "macro_recall": 0.42441287878787876,
+   "macro_f1": 0.3090678410291898,
+   "weighted_f1": 0.2493831847050552,
+   "n_predicted_classes": 2,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3159710648148148,
+    0.3284270833333333
+   ],
+   "macro_f1_ci": [
+    0.3043824010768876,
+    0.3133716400128781
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "hierarchy": "H3",
+   "method": "fine prediction mapped to coarse",
+   "template": "texture_gray",
+   "accuracy": 0.3518981481481481,
+   "balanced_accuracy": 0.4440391764870932,
+   "macro_precision": 0.4561151504256323,
+   "macro_recall": 0.4440391764870932,
+   "macro_f1": 0.36470166231258294,
+   "weighted_f1": 0.3328921548784137,
+   "n_predicted_classes": 3,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3456006944444444,
+    0.3581944444444444
+   ],
+   "macro_f1_ci": [
+    0.35867134990211674,
+    0.3707610677184252
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "hierarchy": "H5",
+   "method": "direct coarse prompts",
+   "template": "photo",
+   "accuracy": 0.36407407407407405,
+   "balanced_accuracy": 0.33913068181818184,
+   "macro_precision": 0.2868282213455748,
+   "macro_recall": 0.33913068181818184,
+   "macro_f1": 0.2720843695035859,
+   "weighted_f1": 0.29873796069498015,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3574525462962963,
+    0.3701851851851852
+   ],
+   "macro_f1_ci": [
+    0.2680387821096682,
+    0.27617891692173674
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "hierarchy": "H5",
+   "method": "fine prediction mapped to coarse",
+   "template": "texture_gray",
+   "accuracy": 0.30875,
+   "balanced_accuracy": 0.2913068181818182,
+   "macro_precision": 0.2780874903336715,
+   "macro_recall": 0.2913068181818182,
+   "macro_f1": 0.2388968825718786,
+   "weighted_f1": 0.2550957187716085,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "accuracy_ci": [
+    0.3024988425925926,
+    0.31444444444444447
+   ],
+   "macro_f1_ci": [
+    0.23474730145992978,
+    0.24309577281745137
+   ]
+  }
+ ],
+ "linear_probe": [
+  {
+   "model": "clip_b32",
+   "mode": "vv",
+   "accuracy": 0.5930092592592593,
+   "balanced_accuracy": 0.57175,
+   "macro_precision": 0.5845145586639287,
+   "macro_recall": 0.57175,
+   "macro_f1": 0.5496769236664008,
+   "weighted_f1": 0.5644842629527257,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "clip_b32",
+   "mode": "dual",
+   "accuracy": 0.6366666666666667,
+   "balanced_accuracy": 0.6148791666666666,
+   "macro_precision": 0.6225460347925342,
+   "macro_recall": 0.6148791666666666,
+   "macro_f1": 0.5982572397593916,
+   "weighted_f1": 0.6133660449598404,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "clip_l14",
+   "mode": "vv",
+   "accuracy": 0.6256018518518518,
+   "balanced_accuracy": 0.6056458333333333,
+   "macro_precision": 0.6220018064579288,
+   "macro_recall": 0.6056458333333333,
+   "macro_f1": 0.5908122610277411,
+   "weighted_f1": 0.6043372345664131,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "clip_l14",
+   "mode": "dual",
+   "accuracy": 0.6980092592592593,
+   "balanced_accuracy": 0.6802708333333334,
+   "macro_precision": 0.679838531267605,
+   "macro_recall": 0.6802708333333334,
+   "macro_f1": 0.6719379718135692,
+   "weighted_f1": 0.6841122822461112,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "remoteclip_b32",
+   "mode": "vv",
+   "accuracy": 0.6498148148148148,
+   "balanced_accuracy": 0.6345791666666666,
+   "macro_precision": 0.6396459030489847,
+   "macro_recall": 0.6345791666666666,
+   "macro_f1": 0.6275112413887641,
+   "weighted_f1": 0.6378627076477371,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "remoteclip_b32",
+   "mode": "dual",
+   "accuracy": 0.6880555555555555,
+   "balanced_accuracy": 0.6714708333333334,
+   "macro_precision": 0.676452415306678,
+   "macro_recall": 0.6714708333333334,
+   "macro_f1": 0.6656651404984489,
+   "weighted_f1": 0.676954170959944,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "remoteclip_l14",
+   "mode": "vv",
+   "accuracy": 0.6578240740740741,
+   "balanced_accuracy": 0.6415083333333333,
+   "macro_precision": 0.6504835115170571,
+   "macro_recall": 0.6415083333333333,
+   "macro_f1": 0.6305024395709361,
+   "weighted_f1": 0.640927254869816,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "remoteclip_l14",
+   "mode": "dual",
+   "accuracy": 0.7007407407407408,
+   "balanced_accuracy": 0.683325,
+   "macro_precision": 0.6855065769636932,
+   "macro_recall": 0.683325,
+   "macro_f1": 0.6752848506415581,
+   "weighted_f1": 0.6864653967637723,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "georsclip_b32",
+   "mode": "vv",
+   "accuracy": 0.637175925925926,
+   "balanced_accuracy": 0.6158208333333333,
+   "macro_precision": 0.6422479662380309,
+   "macro_recall": 0.6158208333333333,
+   "macro_f1": 0.5961123242448922,
+   "weighted_f1": 0.6112083794220737,
+   "n_predicted_classes": 10,
+   "n": 21600
+  },
+  {
+   "model": "georsclip_b32",
+   "mode": "dual",
+   "accuracy": 0.6664351851851852,
+   "balanced_accuracy": 0.6448500000000001,
+   "macro_precision": 0.654599521903524,
+   "macro_recall": 0.6448500000000001,
+   "macro_f1": 0.6280061181697885,
+   "weighted_f1": 0.6435899970217058,
+   "n_predicted_classes": 10,
+   "n": 21600
+  }
+ ],
+ "naive_uint8": [
+  {
+   "model": "clip_b32",
+   "template": "aerial",
+   "accuracy": 0.1111111111111111,
+   "balanced_accuracy": 0.1,
+   "macro_precision": 0.011112140012964164,
+   "macro_recall": 0.1,
+   "macro_f1": 0.02000166680556713,
+   "weighted_f1": 0.022224074228407924,
+   "n_predicted_classes": 2,
+   "n": 21600,
+   "predicted_class_counts": [
+    0,
+    21598,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "model": "remoteclip_b32",
+   "template": "aerial",
+   "accuracy": 0.1213888888888889,
+   "balanced_accuracy": 0.10927500000000001,
+   "macro_precision": 0.030384581914790716,
+   "macro_recall": 0.10927500000000001,
+   "macro_f1": 0.0340906486526313,
+   "weighted_f1": 0.03782397882131861,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "predicted_class_counts": [
+    0,
+    15752,
+    5211,
+    0,
+    0,
+    0,
+    0,
+    0,
+    38,
+    599
+   ]
+  },
+  {
+   "model": "georsclip_b32",
+   "template": "aerial",
+   "accuracy": 0.07564814814814814,
+   "balanced_accuracy": 0.08161666666666667,
+   "macro_precision": 0.009242349467334616,
+   "macro_recall": 0.08161666666666667,
+   "macro_f1": 0.01645688723994005,
+   "weighted_f1": 0.01530277886581913,
+   "n_predicted_classes": 4,
+   "n": 21600,
+   "predicted_class_counts": [
+    0,
+    118,
+    0,
+    18166,
+    0,
+    0,
+    0,
+    11,
+    0,
+    3305
+   ]
+  }
+ ],
+ "best_config": {
+  "model": "clip_l14",
+  "mode": "dual",
+  "tta": false,
+  "template": "landcover",
+  "accuracy": 0.22814814814814816,
+  "balanced_accuracy": 0.20746666666666663,
+  "macro_precision": 0.29182306620354553,
+  "macro_recall": 0.20746666666666663,
+  "macro_f1": 0.14353668269638786,
+  "weighted_f1": 0.15702826619505394,
+  "n_predicted_classes": 9,
+  "n": 21600,
+  "accuracy_ci": [
+   0.22286921296296294,
+   0.2339351851851852
+  ],
+  "macro_f1_ci": [
+   0.14054589468283177,
+   0.14665333107218317
+  ],
+  "per_class": [
+   {
+    "class": "AnnualCrop",
+    "precision": 0.16034271725826194,
+    "recall": 0.49125,
+    "f1": 0.24177176253460475,
+    "support": 2400
+   },
+   {
+    "class": "Forest",
+    "precision": 0.1916888204841192,
+    "recall": 0.5708333333333333,
+    "f1": 0.28700115219440664,
+    "support": 2400
+   },
+   {
+    "class": "HerbaceousVegetation",
+    "precision": 0.04066543438077634,
+    "recall": 0.009166666666666667,
+    "f1": 0.014960897653859231,
+    "support": 2400
+   },
+   {
+    "class": "Highway",
+    "precision": 0.06201550387596899,
+    "recall": 0.02,
+    "f1": 0.030245746691871456,
+    "support": 2000
+   },
+   {
+    "class": "Industrial",
+    "precision": 0.6666666666666666,
+    "recall": 0.001,
+    "f1": 0.00199700449326011,
+    "support": 2000
+   },
+   {
+    "class": "Pasture",
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1600
+   },
+   {
+    "class": "PermanentCrop",
+    "precision": 0.07506601282534893,
+    "recall": 0.0995,
+    "f1": 0.08557299505482692,
+    "support": 2000
+   },
+   {
+    "class": "Residential",
+    "precision": 0.2777777777777778,
+    "recall": 0.00625,
+    "f1": 0.012224938875305624,
+    "support": 2400
+   },
+   {
+    "class": "River",
+    "precision": 0.7894736842105263,
+    "recall": 0.0075,
+    "f1": 0.014858841010401188,
+    "support": 2000
+   },
+   {
+    "class": "SeaLake",
+    "precision": 0.6545340445560088,
+    "recall": 0.8691666666666666,
+    "f1": 0.7467334884553427,
+    "support": 2400
+   }
+  ],
+  "confusion": [
+   [
+    1179,
+    124,
+    10,
+    45,
+    0,
+    0,
+    761,
+    1,
+    0,
+    280
+   ],
+   [
+    639,
+    1370,
+    20,
+    53,
+    0,
+    0,
+    195,
+    0,
+    1,
+    122
+   ],
+   [
+    783,
+    811,
+    22,
+    73,
+    0,
+    0,
+    451,
+    0,
+    3,
+    257
+   ],
+   [
+    953,
+    844,
+    19,
+    40,
+    0,
+    0,
+    114,
+    6,
+    0,
+    24
+   ],
+   [
+    313,
+    1193,
+    298,
+    39,
+    2,
+    0,
+    120,
+    29,
+    0,
+    6
+   ],
+   [
+    913,
+    512,
+    7,
+    8,
+    0,
+    0,
+    72,
+    1,
+    0,
+    87
+   ],
+   [
+    1221,
+    432,
+    12,
+    17,
+    0,
+    0,
+    199,
+    0,
+    0,
+    119
+   ],
+   [
+    655,
+    1420,
+    148,
+    20,
+    0,
+    0,
+    46,
+    15,
+    0,
+    96
+   ],
+   [
+    530,
+    427,
+    5,
+    323,
+    0,
+    0,
+    588,
+    2,
+    15,
+    110
+   ],
+   [
+    167,
+    14,
+    0,
+    27,
+    1,
+    0,
+    105,
+    0,
+    0,
+    2086
+   ]
+  ]
+ },
+ "clip_b32_vv": {
+  "template": "sar_backscatter",
+  "per_class": [
+   {
+    "class": "AnnualCrop",
+    "precision": 0.10174880763116058,
+    "recall": 0.13333333333333333,
+    "f1": 0.11541929666366095,
+    "support": 2400
+   },
+   {
+    "class": "Forest",
+    "precision": 0.08459808881394042,
+    "recall": 0.25083333333333335,
+    "f1": 0.12652374947456915,
+    "support": 2400
+   },
+   {
+    "class": "HerbaceousVegetation",
+    "precision": 0.027403846153846154,
+    "recall": 0.02375,
+    "f1": 0.02544642857142857,
+    "support": 2400
+   },
+   {
+    "class": "Highway",
+    "precision": 0.07015706806282722,
+    "recall": 0.0335,
+    "f1": 0.045346869712351946,
+    "support": 2000
+   },
+   {
+    "class": "Industrial",
+    "precision": 0.016734279918864097,
+    "recall": 0.0165,
+    "f1": 0.01661631419939577,
+    "support": 2000
+   },
+   {
+    "class": "Pasture",
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1600
+   },
+   {
+    "class": "PermanentCrop",
+    "precision": 0.030303030303030304,
+    "recall": 0.0005,
+    "f1": 0.000983767830791933,
+    "support": 2000
+   },
+   {
+    "class": "Residential",
+    "precision": 0.34796238244514105,
+    "recall": 0.04625,
+    "f1": 0.08164766458256711,
+    "support": 2400
+   },
+   {
+    "class": "River",
+    "precision": 1.0,
+    "recall": 0.0005,
+    "f1": 0.0009995002498750624,
+    "support": 2000
+   },
+   {
+    "class": "SeaLake",
+    "precision": 0.15442529697172494,
+    "recall": 0.38458333333333333,
+    "f1": 0.22036528590187418,
+    "support": 2400
+   }
+  ],
+  "confusion": [
+   [
+    320,
+    867,
+    33,
+    96,
+    320,
+    0,
+    0,
+    4,
+    0,
+    760
+   ],
+   [
+    197,
+    602,
+    26,
+    37,
+    210,
+    0,
+    2,
+    10,
+    0,
+    1316
+   ],
+   [
+    98,
+    906,
+    57,
+    24,
+    110,
+    1,
+    3,
+    10,
+    0,
+    1191
+   ],
+   [
+    283,
+    1112,
+    206,
+    67,
+    48,
+    0,
+    1,
+    12,
+    0,
+    271
+   ],
+   [
+    366,
+    449,
+    1010,
+    3,
+    33,
+    0,
+    2,
+    95,
+    0,
+    42
+   ],
+   [
+    247,
+    892,
+    54,
+    14,
+    63,
+    0,
+    0,
+    3,
+    0,
+    327
+   ],
+   [
+    431,
+    712,
+    37,
+    35,
+    180,
+    1,
+    1,
+    11,
+    0,
+    592
+   ],
+   [
+    896,
+    626,
+    564,
+    2,
+    64,
+    0,
+    0,
+    111,
+    0,
+    137
+   ],
+   [
+    140,
+    730,
+    88,
+    491,
+    76,
+    0,
+    23,
+    33,
+    1,
+    418
+   ],
+   [
+    167,
+    220,
+    5,
+    186,
+    868,
+    0,
+    1,
+    30,
+    0,
+    923
+   ]
+  ],
+  "H3": {
+   "template": "sar_backscatter",
+   "per_class": [
+    {
+     "class": "vegetation",
+     "precision": 0.5146270584436552,
+     "recall": 0.7378703703703704,
+     "f1": 0.6063534335172152,
+     "support": 10800
+    },
+    {
+     "class": "built-up",
+     "precision": 0.10958456002616945,
+     "recall": 0.05234375,
+     "f1": 0.07084699164639949,
+     "support": 6400
+    },
+    {
+     "class": "water",
+     "precision": 0.33649444081098756,
+     "recall": 0.23386363636363636,
+     "f1": 0.2759452936444087,
+     "support": 4400
+    }
+   ],
+   "confusion": [
+    [
+     7969,
+     1144,
+     1687
+    ],
+    [
+     5723,
+     335,
+     342
+    ],
+    [
+     1793,
+     1578,
+     1029
+    ]
+   ]
+  }
+ }
+}

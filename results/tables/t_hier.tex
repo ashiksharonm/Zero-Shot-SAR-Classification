@@ -1,0 +1,39 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Hierarchical (coarse) classification on the test split, VV input, compared with the majority-class baseline. ``direct'': coarse group names are prompted directly; ``fine$\to$coarse'': the 10-class prediction is mapped to its group. Acc./Bal./F1 in \%.}
+\label{tab:hier}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}llcccc@{}}
+\toprule
+Method & Template & Acc. & Bal. & Macro-F1 & \#Pred \\
+\midrule
+\multicolumn{6}{l}{\textit{H3: 3 coarse groups (vegetation, built-up, water)}} \\
+Majority class (always ``vegetation'') & -- & 50.0 & 33.3 & 22.2 & 1 \\
+Uniform random guess (expected) & -- & 33.3 & 33.3 & -- & 3 \\
+CLIP ViT-B/32, direct & sar\_backscatter & 43.2 & 34.1 & 31.8 & 3 \\
+CLIP ViT-B/32, fine$\to$coarse & sar\_backscatter & 33.6 & 29.4 & 27.4 & 3 \\
+CLIP ViT-L/14, direct & sar\_texture & 44.2 & 38.9 & 37.0 & 3 \\
+CLIP ViT-L/14, fine$\to$coarse & generic & 39.9 & 30.3 & 29.2 & 3 \\
+RemoteCLIP ViT-B/32, direct & texture\_gray & 28.0 & 28.5 & 25.1 & 3 \\
+RemoteCLIP ViT-B/32, fine$\to$coarse & sar\_backscatter & 48.1 & 38.0 & 32.1 & 3 \\
+RemoteCLIP ViT-L/14, direct & sar\_texture & 22.1 & 28.5 & 17.0 & 3 \\
+RemoteCLIP ViT-L/14, fine$\to$coarse & landcover & 51.3 & 36.5 & 28.9 & 3 \\
+GeoRSCLIP ViT-B/32, direct & sar\_backscatter & 32.2 & 42.4 & 30.9 & 2 \\
+GeoRSCLIP ViT-B/32, fine$\to$coarse & texture\_gray & 35.2 & 44.4 & 36.5 & 3 \\
+\midrule
+\multicolumn{6}{l}{\textit{H5: 5 coarse groups (agriculture, natural vegetation, built-up, transport, water)}} \\
+Majority class (always ``natural vegetation'') & -- & 29.6 & 20.0 & 9.1 & 1 \\
+Uniform random guess (expected) & -- & 20.0 & 20.0 & -- & 5 \\
+CLIP ViT-B/32, direct & landcover & 30.7 & 31.8 & 29.0 & 5 \\
+CLIP ViT-B/32, fine$\to$coarse & sar\_backscatter & 23.2 & 19.5 & 18.4 & 5 \\
+CLIP ViT-L/14, direct & structure & 32.5 & 23.6 & 16.8 & 5 \\
+CLIP ViT-L/14, fine$\to$coarse & generic & 25.6 & 23.0 & 18.7 & 5 \\
+RemoteCLIP ViT-B/32, direct & structure & 29.8 & 20.9 & 11.6 & 4 \\
+RemoteCLIP ViT-B/32, fine$\to$coarse & sar\_backscatter & 29.3 & 21.8 & 15.9 & 5 \\
+RemoteCLIP ViT-L/14, direct & sar\_texture & 29.9 & 20.2 & 9.6 & 3 \\
+RemoteCLIP ViT-L/14, fine$\to$coarse & landcover & 31.1 & 21.7 & 13.1 & 4 \\
+GeoRSCLIP ViT-B/32, direct & photo & 36.4 & 33.9 & 27.2 & 4 \\
+GeoRSCLIP ViT-B/32, fine$\to$coarse & texture\_gray & 30.9 & 29.1 & 23.9 & 4 \\
+\bottomrule
+\end{tabular*}
+\end{table}

@@ -1,0 +1,33 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Zero-shot results per model and SAR input encoding on the test split (10 classes). For each model and input the single prompt template with the highest dev macro-F1 is used. Macro-P/R/F1 are unweighted means over the 10 classes.}
+\label{tab:models}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lllccccc@{}}
+\toprule
+Model & Input & Template & Acc. [95\% CI] & Bal. & Macro-P & Macro-R & Macro-F1 \\
+\midrule
+CLIP ViT-B/32 & VV & sar\_backscatter & 9.8 [9.4, 10.2] & 8.9 & 18.3 & 8.9 & 6.3 \\
+ & VH & sar\_backscatter & 12.7 [12.3, 13.2] & 11.5 & 10.8 & 11.5 & 6.4 \\
+ & Dual-pol & landcover & 18.9 [18.4, 19.4] & 17.4 & 32.6 & 17.4 & 11.3 \\
+\midrule
+CLIP ViT-L/14 & VV & generic & 12.7 [12.3, 13.1] & 13.1 & 18.0 & 13.1 & 10.3 \\
+ & VH & generic & 12.6 [12.2, 13.1] & 13.1 & 19.3 & 13.1 & 10.5 \\
+ & Dual-pol & landcover & 22.8 [22.3, 23.4] & 20.7 & 29.2 & 20.7 & 14.4 \\
+\midrule
+RemoteCLIP ViT-B/32 & VV & sar\_backscatter & 12.0 [11.6, 12.4] & 11.8 & 8.2 & 11.8 & 6.1 \\
+ & VH & sar\_backscatter & 12.1 [11.7, 12.6] & 11.5 & 9.2 & 11.5 & 6.1 \\
+ & Dual-pol & sar\_texture & 11.5 [11.0, 11.9] & 10.3 & 9.1 & 10.3 & 2.7 \\
+\midrule
+RemoteCLIP ViT-L/14 & VV & landcover & 12.0 [11.6, 12.5] & 11.0 & 13.5 & 11.0 & 4.7 \\
+ & VH & landcover & 12.6 [12.2, 13.1] & 11.4 & 15.6 & 11.4 & 4.8 \\
+ & Dual-pol & landcover & 12.8 [12.3, 13.2] & 12.3 & 17.5 & 12.3 & 5.6 \\
+\midrule
+GeoRSCLIP ViT-B/32 & VV & texture\_gray & 20.8 [20.3, 21.3] & 19.5 & 13.0 & 19.5 & 12.8 \\
+ & VH & texture\_gray & 13.8 [13.4, 14.3] & 12.8 & 13.2 & 12.8 & 8.8 \\
+ & Dual-pol & landcover & 11.6 [11.2, 12.0] & 10.4 & 7.2 & 10.4 & 2.9 \\
+\midrule
+Majority class & -- & -- & 11.1 & 10.0 & 1.1 & 10.0 & 2.0 \\
+\bottomrule
+\end{tabular*}
+\end{table}

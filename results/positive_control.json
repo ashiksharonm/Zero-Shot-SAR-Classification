@@ -1,0 +1,603 @@
+{
+ "n": 2700,
+ "clip_b32|optical_rgb|generic": {
+  "accuracy": 0.37925925925925924,
+  "balanced_accuracy": 0.38604869023818855,
+  "macro_precision": 0.4292447061439394,
+  "macro_recall": 0.38604869023818855,
+  "macro_f1": 0.34612555331029515,
+  "weighted_f1": 0.3374412587567461,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|photo": {
+  "accuracy": 0.29074074074074074,
+  "balanced_accuracy": 0.28789678631964855,
+  "macro_precision": 0.28593346392451013,
+  "macro_recall": 0.28789678631964855,
+  "macro_f1": 0.23230214315343573,
+  "weighted_f1": 0.2333783197567559,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|aerial": {
+  "accuracy": 0.30703703703703705,
+  "balanced_accuracy": 0.3066210155051327,
+  "macro_precision": 0.39165622096345737,
+  "macro_recall": 0.3066210155051327,
+  "macro_f1": 0.2840719607478476,
+  "weighted_f1": 0.27638181669289585,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|sar_basic": {
+  "accuracy": 0.31222222222222223,
+  "balanced_accuracy": 0.311093800798007,
+  "macro_precision": 0.4516788664096783,
+  "macro_recall": 0.311093800798007,
+  "macro_f1": 0.25900894825881704,
+  "weighted_f1": 0.2614758507867105,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|sar_backscatter": {
+  "accuracy": 0.3274074074074074,
+  "balanced_accuracy": 0.3243477413782205,
+  "macro_precision": 0.30079242516492244,
+  "macro_recall": 0.3243477413782205,
+  "macro_f1": 0.27268435845121014,
+  "weighted_f1": 0.27405106164328574,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|sar_texture": {
+  "accuracy": 0.2966666666666667,
+  "balanced_accuracy": 0.2847487989987362,
+  "macro_precision": 0.4992794958137824,
+  "macro_recall": 0.2847487989987362,
+  "macro_f1": 0.25776353002015107,
+  "weighted_f1": 0.2597531570623656,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|sentinel": {
+  "accuracy": 0.31407407407407406,
+  "balanced_accuracy": 0.3239715777024731,
+  "macro_precision": 0.4153715350420887,
+  "macro_recall": 0.3239715777024731,
+  "macro_f1": 0.2980451838320904,
+  "weighted_f1": 0.29275605044227815,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|landcover": {
+  "accuracy": 0.36185185185185187,
+  "balanced_accuracy": 0.36503369002795916,
+  "macro_precision": 0.3880662414736589,
+  "macro_recall": 0.36503369002795916,
+  "macro_f1": 0.30111931564167455,
+  "weighted_f1": 0.3006622289808567,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|structure": {
+  "accuracy": 0.3488888888888889,
+  "balanced_accuracy": 0.35000610721614656,
+  "macro_precision": 0.3956873763140414,
+  "macro_recall": 0.35000610721614656,
+  "macro_f1": 0.3051740427122275,
+  "weighted_f1": 0.3043091331168544,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_rgb|texture_gray": {
+  "accuracy": 0.2896296296296296,
+  "balanced_accuracy": 0.28432501017766004,
+  "macro_precision": 0.33829704868443655,
+  "macro_recall": 0.28432501017766004,
+  "macro_f1": 0.25355615427030853,
+  "weighted_f1": 0.2539105302386209,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|generic": {
+  "accuracy": 0.22,
+  "balanced_accuracy": 0.23004686539372066,
+  "macro_precision": 0.2537597443382572,
+  "macro_recall": 0.23004686539372066,
+  "macro_f1": 0.18217484820006352,
+  "weighted_f1": 0.17855415274578537,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|photo": {
+  "accuracy": 0.18666666666666668,
+  "balanced_accuracy": 0.18921209979889886,
+  "macro_precision": 0.2594478157932765,
+  "macro_recall": 0.18921209979889886,
+  "macro_f1": 0.15358095899808027,
+  "weighted_f1": 0.15236542077546644,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|aerial": {
+  "accuracy": 0.20777777777777778,
+  "balanced_accuracy": 0.2102632639680236,
+  "macro_precision": 0.2849677936667974,
+  "macro_recall": 0.2102632639680236,
+  "macro_f1": 0.16611518749422668,
+  "weighted_f1": 0.16344460665495755,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|sar_basic": {
+  "accuracy": 0.2674074074074074,
+  "balanced_accuracy": 0.2643188942384367,
+  "macro_precision": 0.3937019443562611,
+  "macro_recall": 0.2643188942384367,
+  "macro_f1": 0.18381501109719284,
+  "weighted_f1": 0.1865543778962688,
+  "n_predicted_classes": 8,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|sar_backscatter": {
+  "accuracy": 0.21444444444444444,
+  "balanced_accuracy": 0.21562410743777952,
+  "macro_precision": 0.1876894444832425,
+  "macro_recall": 0.21562410743777952,
+  "macro_f1": 0.15876185294180928,
+  "weighted_f1": 0.15958511397615746,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|sar_texture": {
+  "accuracy": 0.1811111111111111,
+  "balanced_accuracy": 0.1674654507719002,
+  "macro_precision": 0.297440391949827,
+  "macro_recall": 0.1674654507719002,
+  "macro_f1": 0.12944521221431776,
+  "weighted_f1": 0.1299783191650949,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|sentinel": {
+  "accuracy": 0.20666666666666667,
+  "balanced_accuracy": 0.2170474620145361,
+  "macro_precision": 0.31532472406518347,
+  "macro_recall": 0.2170474620145361,
+  "macro_f1": 0.1714635422429396,
+  "weighted_f1": 0.1663542165302923,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|landcover": {
+  "accuracy": 0.21481481481481482,
+  "balanced_accuracy": 0.2247869283025919,
+  "macro_precision": 0.36889115948411283,
+  "macro_recall": 0.2247869283025919,
+  "macro_f1": 0.17112285514283687,
+  "weighted_f1": 0.1710487496041048,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|structure": {
+  "accuracy": 0.18555555555555556,
+  "balanced_accuracy": 0.19840639782326552,
+  "macro_precision": 0.25597004077535673,
+  "macro_recall": 0.19840639782326552,
+  "macro_f1": 0.14829374680374657,
+  "weighted_f1": 0.14226652499573306,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "clip_b32|optical_gray|texture_gray": {
+  "accuracy": 0.1922222222222222,
+  "balanced_accuracy": 0.1843203805314399,
+  "macro_precision": 0.28010614393509337,
+  "macro_recall": 0.1843203805314399,
+  "macro_f1": 0.1473133360377582,
+  "weighted_f1": 0.14423745603656593,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|generic": {
+  "accuracy": 0.38555555555555554,
+  "balanced_accuracy": 0.36893005927403894,
+  "macro_precision": 0.4663595592608285,
+  "macro_recall": 0.36893005927403894,
+  "macro_f1": 0.34384481484625956,
+  "weighted_f1": 0.35179725704500137,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|photo": {
+  "accuracy": 0.40555555555555556,
+  "balanced_accuracy": 0.3924691763220418,
+  "macro_precision": 0.4517098726197245,
+  "macro_recall": 0.3924691763220418,
+  "macro_f1": 0.3686134824446542,
+  "weighted_f1": 0.3746384876731604,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|aerial": {
+  "accuracy": 0.35555555555555557,
+  "balanced_accuracy": 0.3420392230693707,
+  "macro_precision": 0.45773030372878054,
+  "macro_recall": 0.3420392230693707,
+  "macro_f1": 0.34734010424028955,
+  "weighted_f1": 0.3528821320406155,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|sar_basic": {
+  "accuracy": 0.3851851851851852,
+  "balanced_accuracy": 0.3749398919633339,
+  "macro_precision": 0.436297551542361,
+  "macro_recall": 0.3749398919633339,
+  "macro_f1": 0.3333997217137664,
+  "weighted_f1": 0.34006235422797804,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|sar_backscatter": {
+  "accuracy": 0.42962962962962964,
+  "balanced_accuracy": 0.41538175627478235,
+  "macro_precision": 0.5158070137229637,
+  "macro_recall": 0.41538175627478235,
+  "macro_f1": 0.3636284178665883,
+  "weighted_f1": 0.3718828139271757,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|sar_texture": {
+  "accuracy": 0.37962962962962965,
+  "balanced_accuracy": 0.37052563147603956,
+  "macro_precision": 0.44494881268982595,
+  "macro_recall": 0.37052563147603956,
+  "macro_f1": 0.3232517491436385,
+  "weighted_f1": 0.32835377329156673,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|sentinel": {
+  "accuracy": 0.38222222222222224,
+  "balanced_accuracy": 0.36357009471317736,
+  "macro_precision": 0.4631428432012541,
+  "macro_recall": 0.36357009471317736,
+  "macro_f1": 0.33287714320949163,
+  "weighted_f1": 0.34448206773378137,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|landcover": {
+  "accuracy": 0.4,
+  "balanced_accuracy": 0.38678094065023894,
+  "macro_precision": 0.4664009135906352,
+  "macro_recall": 0.38678094065023894,
+  "macro_f1": 0.32677969123907114,
+  "weighted_f1": 0.3272192836034443,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|structure": {
+  "accuracy": 0.3566666666666667,
+  "balanced_accuracy": 0.34493084350960035,
+  "macro_precision": 0.3834335395460124,
+  "macro_recall": 0.34493084350960035,
+  "macro_f1": 0.3042611907411402,
+  "weighted_f1": 0.31157020582983685,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_rgb|texture_gray": {
+  "accuracy": 0.4103703703703704,
+  "balanced_accuracy": 0.4031521698973831,
+  "macro_precision": 0.41213277531906717,
+  "macro_recall": 0.4031521698973831,
+  "macro_f1": 0.3702002673293171,
+  "weighted_f1": 0.3721161195964167,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|generic": {
+  "accuracy": 0.20037037037037037,
+  "balanced_accuracy": 0.19504865472171895,
+  "macro_precision": 0.281781637325117,
+  "macro_recall": 0.19504865472171895,
+  "macro_f1": 0.18383783392364,
+  "weighted_f1": 0.1880976763721519,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|photo": {
+  "accuracy": 0.18444444444444444,
+  "balanced_accuracy": 0.1812810893122922,
+  "macro_precision": 0.2419213437328474,
+  "macro_recall": 0.1812810893122922,
+  "macro_f1": 0.1689869406778784,
+  "weighted_f1": 0.16954016373532668,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|aerial": {
+  "accuracy": 0.25703703703703706,
+  "balanced_accuracy": 0.25534064529724193,
+  "macro_precision": 0.33166071078761056,
+  "macro_recall": 0.25534064529724193,
+  "macro_f1": 0.2479449477288343,
+  "weighted_f1": 0.24719413651714772,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|sar_basic": {
+  "accuracy": 0.14222222222222222,
+  "balanced_accuracy": 0.14422446610239958,
+  "macro_precision": 0.30314208434899304,
+  "macro_recall": 0.14422446610239958,
+  "macro_f1": 0.11073240110870444,
+  "weighted_f1": 0.10821462786541586,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|sar_backscatter": {
+  "accuracy": 0.15814814814814815,
+  "balanced_accuracy": 0.16601252678537337,
+  "macro_precision": 0.20622060043246743,
+  "macro_recall": 0.16601252678537337,
+  "macro_f1": 0.12736816254175182,
+  "weighted_f1": 0.12188031100186725,
+  "n_predicted_classes": 8,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|sar_texture": {
+  "accuracy": 0.25407407407407406,
+  "balanced_accuracy": 0.2421191501767126,
+  "macro_precision": 0.25206201250651034,
+  "macro_recall": 0.2421191501767126,
+  "macro_f1": 0.21025034506745585,
+  "weighted_f1": 0.21752171072251766,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|sentinel": {
+  "accuracy": 0.12333333333333334,
+  "balanced_accuracy": 0.12119383383802591,
+  "macro_precision": 0.24062484976241713,
+  "macro_recall": 0.12119383383802591,
+  "macro_f1": 0.09044844039270167,
+  "weighted_f1": 0.09194560903104299,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|landcover": {
+  "accuracy": 0.29333333333333333,
+  "balanced_accuracy": 0.28837583553024776,
+  "macro_precision": 0.22567784758144632,
+  "macro_recall": 0.28837583553024776,
+  "macro_f1": 0.23568021054606197,
+  "weighted_f1": 0.2344314054997899,
+  "n_predicted_classes": 8,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|structure": {
+  "accuracy": 0.12407407407407407,
+  "balanced_accuracy": 0.1340206636471577,
+  "macro_precision": 0.21427326935315677,
+  "macro_recall": 0.1340206636471577,
+  "macro_f1": 0.0755276463415378,
+  "weighted_f1": 0.06808325986357677,
+  "n_predicted_classes": 8,
+  "n": 2700
+ },
+ "remoteclip_b32|optical_gray|texture_gray": {
+  "accuracy": 0.31333333333333335,
+  "balanced_accuracy": 0.3045277283144721,
+  "macro_precision": 0.35768364561738186,
+  "macro_recall": 0.3045277283144721,
+  "macro_f1": 0.26387729002832977,
+  "weighted_f1": 0.2683674268610298,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|generic": {
+  "accuracy": 0.4922222222222222,
+  "balanced_accuracy": 0.49699392569071443,
+  "macro_precision": 0.5895195879912257,
+  "macro_recall": 0.49699392569071443,
+  "macro_f1": 0.46582742514225295,
+  "weighted_f1": 0.4553755772877531,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|photo": {
+  "accuracy": 0.4911111111111111,
+  "balanced_accuracy": 0.49840650784665136,
+  "macro_precision": 0.5559129133329895,
+  "macro_recall": 0.49840650784665136,
+  "macro_f1": 0.46502665979597924,
+  "weighted_f1": 0.45033878819541856,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|aerial": {
+  "accuracy": 0.45740740740740743,
+  "balanced_accuracy": 0.4622659578820243,
+  "macro_precision": 0.565424604499714,
+  "macro_recall": 0.4622659578820243,
+  "macro_f1": 0.4389428374548544,
+  "weighted_f1": 0.4269013690788021,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|sar_basic": {
+  "accuracy": 0.4533333333333333,
+  "balanced_accuracy": 0.4565628080232925,
+  "macro_precision": 0.4476709868698334,
+  "macro_recall": 0.4565628080232925,
+  "macro_f1": 0.4056517991059305,
+  "weighted_f1": 0.3976362878927268,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|sar_backscatter": {
+  "accuracy": 0.5007407407407407,
+  "balanced_accuracy": 0.5135835956726729,
+  "macro_precision": 0.5239561529333773,
+  "macro_recall": 0.5135835956726729,
+  "macro_f1": 0.4369020779231434,
+  "weighted_f1": 0.4214459133147288,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|sar_texture": {
+  "accuracy": 0.4948148148148148,
+  "balanced_accuracy": 0.5065341235197672,
+  "macro_precision": 0.5306312180381884,
+  "macro_recall": 0.5065341235197672,
+  "macro_f1": 0.43355726801135147,
+  "weighted_f1": 0.41920229784114493,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|sentinel": {
+  "accuracy": 0.5348148148148149,
+  "balanced_accuracy": 0.544766755405562,
+  "macro_precision": 0.5856874161292571,
+  "macro_recall": 0.544766755405562,
+  "macro_f1": 0.5019366132615537,
+  "weighted_f1": 0.4892523559417665,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|landcover": {
+  "accuracy": 0.49333333333333335,
+  "balanced_accuracy": 0.510607599279887,
+  "macro_precision": 0.460321165246774,
+  "macro_recall": 0.510607599279887,
+  "macro_f1": 0.4373497289098971,
+  "weighted_f1": 0.4142266203841171,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|structure": {
+  "accuracy": 0.5074074074074074,
+  "balanced_accuracy": 0.5192476503558273,
+  "macro_precision": 0.5511795888396216,
+  "macro_recall": 0.5192476503558273,
+  "macro_f1": 0.47122504275235205,
+  "weighted_f1": 0.45612838237778053,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_rgb|texture_gray": {
+  "accuracy": 0.4911111111111111,
+  "balanced_accuracy": 0.5048382922574055,
+  "macro_precision": 0.5676122585623742,
+  "macro_recall": 0.5048382922574055,
+  "macro_f1": 0.4303929809902014,
+  "weighted_f1": 0.41496329120721537,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|generic": {
+  "accuracy": 0.31666666666666665,
+  "balanced_accuracy": 0.333490976286101,
+  "macro_precision": 0.43725732157362074,
+  "macro_recall": 0.333490976286101,
+  "macro_f1": 0.25798798439212345,
+  "weighted_f1": 0.2481620305896663,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|photo": {
+  "accuracy": 0.3592592592592593,
+  "balanced_accuracy": 0.36792887165183025,
+  "macro_precision": 0.41979827561049365,
+  "macro_recall": 0.36792887165183025,
+  "macro_f1": 0.28456248401378526,
+  "weighted_f1": 0.28042677153383766,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|aerial": {
+  "accuracy": 0.3325925925925926,
+  "balanced_accuracy": 0.343529222608847,
+  "macro_precision": 0.33238356718813183,
+  "macro_recall": 0.343529222608847,
+  "macro_f1": 0.27011456998898187,
+  "weighted_f1": 0.2640661856863258,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|sar_basic": {
+  "accuracy": 0.3011111111111111,
+  "balanced_accuracy": 0.3140694269014456,
+  "macro_precision": 0.22625136159723488,
+  "macro_recall": 0.3140694269014456,
+  "macro_f1": 0.23216532853242522,
+  "weighted_f1": 0.2247440968894212,
+  "n_predicted_classes": 8,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|sar_backscatter": {
+  "accuracy": 0.30148148148148146,
+  "balanced_accuracy": 0.31943041692957214,
+  "macro_precision": 0.3641047578538019,
+  "macro_recall": 0.31943041692957214,
+  "macro_f1": 0.23107490689605575,
+  "weighted_f1": 0.21859796963135325,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|sar_texture": {
+  "accuracy": 0.2848148148148148,
+  "balanced_accuracy": 0.300075761339208,
+  "macro_precision": 0.35771969477274396,
+  "macro_recall": 0.300075761339208,
+  "macro_f1": 0.20582103958565376,
+  "weighted_f1": 0.19724042145674872,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|sentinel": {
+  "accuracy": 0.2992592592592593,
+  "balanced_accuracy": 0.3180254773069319,
+  "macro_precision": 0.4406845837130133,
+  "macro_recall": 0.3180254773069319,
+  "macro_f1": 0.25072295738043315,
+  "weighted_f1": 0.2398948255477968,
+  "n_predicted_classes": 10,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|landcover": {
+  "accuracy": 0.31296296296296294,
+  "balanced_accuracy": 0.3323899654753748,
+  "macro_precision": 0.3601573277493216,
+  "macro_recall": 0.3323899654753748,
+  "macro_f1": 0.2359133844125349,
+  "weighted_f1": 0.222382676616028,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|structure": {
+  "accuracy": 0.3174074074074074,
+  "balanced_accuracy": 0.33711067451672955,
+  "macro_precision": 0.3497310372885565,
+  "macro_recall": 0.33711067451672955,
+  "macro_f1": 0.2442905170139284,
+  "weighted_f1": 0.2295258842411069,
+  "n_predicted_classes": 9,
+  "n": 2700
+ },
+ "georsclip_b32|optical_gray|texture_gray": {
+  "accuracy": 0.2959259259259259,
+  "balanced_accuracy": 0.3136229073732648,
+  "macro_precision": 0.3622410490840131,
+  "macro_recall": 0.3136229073732648,
+  "macro_f1": 0.22462905352563114,
+  "weighted_f1": 0.21334764631035227,
+  "n_predicted_classes": 10,
+  "n": 2700
+ }
+}

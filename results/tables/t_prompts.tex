@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Prompt templates: zero-shot results of CLIP ViT-B/32 with VV input on the test split (21,600 images, 10 classes). Acc.\ = overall (micro) accuracy with 95\% bootstrap CI; Bal.\ = balanced accuracy (macro-averaged recall); F1 = macro-F1; \#Pred = number of distinct classes ever predicted.}
+\label{tab:prompts}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lllcccc@{}}
+\toprule
+Category & ID & Template & Acc. [95\% CI] & Bal. & F1 & \#Pred \\
+\midrule
+General & generic & ``a satellite image of \{class\}.'' & 9.0 [8.6, 9.4] & 8.9 & 5.9 & 10 \\
+General & photo & ``a photo of \{class\}.'' & 9.9 [9.5, 10.3] & 9.2 & 5.5 & 9 \\
+Spatial & aerial & ``an aerial view of \{class\}.'' & 11.6 [11.1, 12.0] & 10.4 & 4.4 & 10 \\
+SAR-specific & sar\_basic & ``radar imagery showing \{class\}.'' & 11.4 [11.0, 11.9] & 10.3 & 3.1 & 9 \\
+SAR-specific & sar\_backscatter & ``SAR backscatter pattern of \{class\}.'' & 9.8 [9.4, 10.2] & 8.9 & 6.3 & 10 \\
+SAR-specific & sar\_texture & ``grayscale radar texture of \{class\}.'' & 11.4 [11.0, 11.9] & 10.3 & 2.7 & 8 \\
+Remote sensing & sentinel & ``a Sentinel-1 satellite image of \{class\}.'' & 10.5 [10.1, 10.9] & 9.6 & 5.3 & 10 \\
+Remote sensing & landcover & ``land cover classification of \{class\}.'' & 9.0 [8.6, 9.4] & 8.3 & 5.6 & 10 \\
+Structural & structure & ``spatial pattern of \{class\} from above.'' & 12.0 [11.6, 12.4] & 10.8 & 3.8 & 10 \\
+Structural & texture\_gray & ``grayscale texture pattern of \{class\}.'' & 11.2 [10.8, 11.6] & 10.1 & 2.3 & 9 \\
+Ensemble & ensemble & ``mean of all 10 templates'' & 10.7 [10.3, 11.1] & 9.7 & 4.3 & 10 \\
+\midrule
+\multicolumn{3}{l}{Majority class (always ``AnnualCrop'')} & 11.1 & 10.0 & 2.0 & 1 \\
+\multicolumn{3}{l}{Uniform random guess (expected)} & 10.0 & 10.0 & $\approx$10.0 & 10 \\
+\bottomrule
+\end{tabular*}
+\end{table}

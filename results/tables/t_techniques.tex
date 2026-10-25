@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Zero-shot techniques (VV input, 10 classes, test split). Each cell gives accuracy / macro-F1 (\%). TTA was run for the ViT-B/32 models only (--: not run).}
+\label{tab:techniques}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lccccc@{}}
+\toprule
+Technique (VV input) & CLIP ViT-B/32 & CLIP ViT-L/14 & RemoteCLIP ViT-B/32 & RemoteCLIP ViT-L/14 & GeoRSCLIP ViT-B/32 \\
+\midrule
+Baseline (single dev-selected template) & 9.8 / 6.3 & 12.7 / 10.3 & 12.0 / 6.1 & 12.0 / 4.7 & 20.8 / 12.8 \\
+Prompt ensembling (10 templates) & 10.7 / 4.3 & 13.4 / 8.0 & 11.0 / 5.1 & 11.2 / 3.9 & 15.4 / 12.1 \\
+Physics-informed class descriptions & 12.0 / 3.6 & 14.3 / 11.3 & 16.5 / 7.8 & 11.2 / 7.1 & 19.7 / 11.3 \\
+Rotation TTA (0/90/180/270\textdegree) & 8.0 / 5.1 & -- & 11.7 / 5.9 & -- & 21.2 / 12.9 \\
+Ensembling + TTA & 10.6 / 3.9 & -- & 10.9 / 4.4 & -- & 14.7 / 11.4 \\
+Physics + ensembling + TTA & 9.0 / 3.6 & -- & 9.6 / 5.1 & -- & 20.4 / 15.1 \\
+\midrule
+Majority class & 11.1 / 2.0 & 11.1 / 2.0 & 11.1 / 2.0 & 11.1 / 2.0 & 11.1 / 2.0 \\
+\bottomrule
+\end{tabular*}
+\end{table}

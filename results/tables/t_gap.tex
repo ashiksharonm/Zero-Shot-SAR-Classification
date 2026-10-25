@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Modality gap and information content of the frozen embeddings (accuracy, \%, 10 classes). Zero-shot columns use the template ``an aerial view of \{class\}.'' (optical, VV) or the dev-selected template (dual-pol). Optical results use the 2,700-image EuroSAT (Sentinel-2) test split (run for the ViT-B/32 models only; --: not run); SAR results use the EuroSAT-SAR test split. The linear probe (logistic regression on the 5,400 labelled dev images) is \emph{not} zero-shot and is reported only as an upper reference.}
+\label{tab:gap}
+\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lcccccc@{}}
+\toprule
+& \multicolumn{4}{c}{Zero-shot} & \multicolumn{2}{c}{Linear probe} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-7}
+Model & Optical RGB & Optical gray & SAR VV & SAR dual & SAR VV & SAR dual \\
+\midrule
+CLIP ViT-B/32 & 30.7 & 20.8 & 11.6 & 18.9 & 59.3 & 63.7 \\
+CLIP ViT-L/14 & -- & -- & 11.6 & 22.8 & 62.6 & 69.8 \\
+RemoteCLIP ViT-B/32 & 35.6 & 25.7 & 11.3 & 11.5 & 65.0 & 68.8 \\
+RemoteCLIP ViT-L/14 & -- & -- & 9.3 & 12.8 & 65.8 & 70.1 \\
+GeoRSCLIP ViT-B/32 & 45.7 & 33.3 & 8.3 & 11.6 & 63.7 & 66.6 \\
+\bottomrule
+\end{tabular*}
+\end{table}
